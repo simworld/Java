@@ -33,4 +33,5 @@ public class Cosmetic extends AbstractBug {
     public void setStringID(String stringID) {
         this.stringID = stringID;
     }
+
 }

@@ -7,6 +7,7 @@ public abstract class AbstractBug {
     protected String stepToReproduce;
     protected static int bugID;
     protected String summary;
+    protected String date;
 
 
     public void incrementBugID(){
@@ -16,7 +17,7 @@ public abstract class AbstractBug {
         else {
             bugID++;
         }
-    };
+    }
 
     public int getPriority() {
         return priority;
@@ -33,6 +34,11 @@ public abstract class AbstractBug {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setDate(String description) {
+        this.date = date;
+    }
+
 
     public String getStepToReproduce() {
         return stepToReproduce;

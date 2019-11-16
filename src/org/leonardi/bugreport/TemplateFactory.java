@@ -18,7 +18,7 @@ public class TemplateFactory {
     /* User selects the bug type */
     public String selectBugType(){
         System.out.println("Select between the bug type; Cosmetic, Audio, Code or Requirement.");
-        Scanner userInput = new Scanner(System.in);
+        Scanner userInput = new Scanner(System.in); //bugType as variable?
         return userInput.nextLine();
     }
 
@@ -46,40 +46,46 @@ public class TemplateFactory {
         return userInput.nextLine();
     }
 
-    public int askPriority(){
+    static int askPriority(){
         System.out.println("Select the priority 1 to 5: ");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextInt();
     }
-    public String askStepToReproduce(){
-        System.out.println("How do you get to the issue? ");
+
+    static String askDate(){
+        System.out.println("Enter the date (Format DD-MM-YYYY): ");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
+//    public String askStepToReproduce(){
+//        System.out.println("How do you get to the issue? ");
+//        Scanner userInput = new Scanner(System.in);
+//        return userInput.nextLine();
+//    }
 
-    public String askActualResult(){
-        System.out.println("Enter the actual result: ");
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextLine();
-    }
+//    public String askActualResult(){
+//        System.out.println("Enter the actual result: ");
+//        Scanner userInput = new Scanner(System.in);
+//        return userInput.nextLine();
+//    }
 
-    public String askExpectedResult(){
-        System.out.println("Enter the expected result: ");
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextLine();
-    }
+//    public String askExpectedResult(){
+//        System.out.println("Enter the expected result: ");
+//        Scanner userInput = new Scanner(System.in);
+//        return userInput.nextLine();
+//    }
 
-    public String askRerecording(){
-        System.out.println("Do you need a re-recording? Yes or No ");
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextLine();
-    }
+//    public String askRerecording(){
+//        System.out.println("Do you need a re-recording? Yes or No ");
+//        Scanner userInput = new Scanner(System.in);
+//        return userInput.nextLine();
+//    }
 
-    public int askRequirement(){
-        System.out.println("Enter the requirement ID: ");
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextInt();
-    }
+//    public int askRequirement(){
+//        System.out.println("Enter the requirement ID: ");
+//        Scanner userInput = new Scanner(System.in);
+//        return userInput.nextInt();
+//    }
 
     /* set the objects */
 //    public void populatingBug(ArrayList bugsContainer){
