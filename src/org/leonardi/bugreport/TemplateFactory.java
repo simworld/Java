@@ -40,7 +40,7 @@ public class TemplateFactory {
     /* methods to populate the various filed */
     public ArrayList<Object> bugDetails = new ArrayList<>();
 
-    public String askSummary(){
+    static String askDescription(){
         System.out.println("Enter the description: ");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();

@@ -3,6 +3,8 @@ package org.leonardi.bugreport;
 import org.leonardi.bugreport.model.Cosmetic;
 import java.util.*;
 
+import static org.leonardi.bugreport.TemplateFactory.askDescription;
+
 public class BugReport {
     public static void main(String[] args) {
 
@@ -10,7 +12,9 @@ public class BugReport {
         int bugs = 0;
 
         Cosmetic test = new Cosmetic();
-        test.incrementBugID();
+        test.setDescription(askDescription());
+
+
         try{
             System.out.println("How many bugs do you want insert?");
             bugs = scanner.nextInt();
