@@ -36,6 +36,7 @@ public class TemplateFactory {
         }
     }
 
+
     /* methods to populate the various filed */
     public ArrayList<Object> bugDetails = new ArrayList<>();
 
@@ -96,6 +97,5 @@ public class TemplateFactory {
     * 4. Printing the result
     *
     * */
-
 
 }
