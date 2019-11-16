@@ -7,6 +7,7 @@ import org.leonardi.bugreport.model.Requirements;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 public class TemplateFactory {
 

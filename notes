@@ -1,9 +1,14 @@
     Main idea
     - to search for the bugs we need to have a constant (in this case bug ID) to recall the details we want.
-    - a single array per entry
-    - another array will be to collect all the other arrays where the first entry is the bug ID
+    - we can use arrays to manage all the bug fields
+    - a single file per bug
+    - the name of the file needs to reflect the BugID for the purpose of searching bugs
 
-    As we probably need to write on files we could do the following:
-    - we can write one file per bug - the name of the file needs to reflect the BugID for search purpose
+    -
+
+    Other notes
+    - UI mut be last thing
+
+
 
 

@@ -7,8 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="commons-lang3-3.9-sources" level="project" />
-    <orderEntry type="library" exported="" name="libs" level="project" />
-    <orderEntry type="library" name="commons-lang3-3.9" level="project" />
+    <orderEntry type="library" name="libs" level="project" />
+    <orderEntry type="library" name="libs (2)" level="application" />
   </component>
 </module>
