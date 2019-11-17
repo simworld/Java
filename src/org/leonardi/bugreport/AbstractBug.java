@@ -35,10 +35,11 @@ public abstract class AbstractBug {
         this.description = description;
     }
 
+    public String getDate() { return date; }
+
     public void setDate(String description) {
         this.date = date;
     }
-
 
     public String getStepToReproduce() {
         return stepToReproduce;
@@ -63,4 +64,6 @@ public abstract class AbstractBug {
     public void setSummary(String summary) {
         this.summary = summary;
     }
+
+
 }

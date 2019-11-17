@@ -3,23 +3,24 @@ package org.leonardi.bugreport;
 import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
-import org.leonardi.bugreport.model.Requirements;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
-import java.io.*;
+import java.io.FileWriter;
 
 public class TemplateFactory {
 
 
 
     ArrayList<AbstractBug> bugsContainer = new ArrayList<>();
-
     /* User selects the bug type */
+
     static String selectBugType(){
         System.out.println("Select between the bug types: Cosmetic, Audio or Code. ");
         Scanner userInput = new Scanner(System.in); //bugType as variable?
@@ -33,15 +34,10 @@ public class TemplateFactory {
                 return new Cosmetic();
             case "Audio":
                 return new Audio();
-            case "Code":
-                return new Code();
             default:
-                return new Requirements();
+                return new Code();
         }
     }
-
-
-
 
     /* methods to populate the various filed */
     public ArrayList<Object> bugDetails = new ArrayList<>();
@@ -94,11 +90,6 @@ public class TemplateFactory {
         return userInput.nextLine();
     }
 
-    public int askRequirement(){
-        System.out.println("Enter the requirement ID: ");
-        Scanner userInput = new Scanner(System.in);
-        return userInput.nextInt();
-    }
 
     public AbstractBug setBug(String bugType){
 
@@ -147,13 +138,14 @@ public class TemplateFactory {
          */
 
         //creating Array that will have the bug detail to print out in another method.
-        ArrayList<Object> bugArray = new ArrayList<>();
+        ArrayList<Object> bugArray = new ArrayList<>(); //perche' Object?
 
         //populating generic object data
         bugArray.add(bug.getBugID());
         bugArray.add(bug.getSummary());
         bugArray.add(bug.getDescription());
         bugArray.add(bug.getStepToReproduce());
+        bugArray.add(bug.getDate());
 
         //Conditions for specific bug type
         if (bug instanceof Cosmetic) {
@@ -181,8 +173,18 @@ public class TemplateFactory {
     public void printBug (ArrayList bug){
         for (int i =0; i < bug.size(); i++){
             System.out.println(bug.get(i) + "\n");
+
             }
         }
+
+//    public void createFile() throws IOException {
+//        //PrintWriter writer = new PrintWriter(AbstractBug.bugID + ".txt");
+//        String tmp = bugDetails.toString();
+//        System.out.println(tmp);
+//        PrintWriter writer = new PrintWriter("/Users/sim/Desktop/output.txt");
+//        writer.write(tmp);
+//        writer.close();
+//    }
 }
 
     /* set the objects */

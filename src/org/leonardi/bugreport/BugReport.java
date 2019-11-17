@@ -1,22 +1,26 @@
 package org.leonardi.bugreport;
 
 import org.leonardi.bugreport.model.Cosmetic;
+
+import java.io.IOException;
 import java.util.*;
 
 import static org.leonardi.bugreport.TemplateFactory.*;
 
 public class BugReport {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         TemplateFactory bug1 = new TemplateFactory();
         String bugType = selectBugType();
         bug1.printBug(buildBug(bug1.setBug(bugType)));
 
-//        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner (System.in);
 //        int bugs;
-//
+
+        //bug1.createFile();
+
 //        try{
-//
+
 //            System.out.println("How many bugs do you want insert?");
 //            bugs = scanner.nextInt();
 //
