@@ -21,7 +21,7 @@ public class TemplateFactory {
 
     /* User selects the bug type */
     static String selectBugType(){
-        System.out.println("Select between the bug type; Cosmetic, Audio, Code or Requirement.");
+        System.out.println("Select between the bug types: Cosmetic, Audio or Code.");
         Scanner userInput = new Scanner(System.in); //bugType as variable?
         return userInput.nextLine();
     }
@@ -141,7 +141,7 @@ public class TemplateFactory {
     }
 
     static ArrayList buildBug(AbstractBug bug){
-        /* - get type
+        /* - get bug
            - create array
            - populate bug with its specific content into the array
          */
