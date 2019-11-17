@@ -182,7 +182,7 @@ public class TemplateFactory {
             fileOut = new FileWriter(fileName);
             for (int i=0; i<bug.size(); i++){
                 String str = bug.get(i).toString();
-                fileOut.write(str);
+                fileOut.write(str + "\n");
                 }
             fileOut.close();
             System.out.println("file saved.");
@@ -190,14 +190,24 @@ public class TemplateFactory {
         catch (IOException e){
             System.out.println("IO Error: " + e.getMessage());
         }
+    }
 
 
-
-//        PrintWriter writer = new PrintWriter(AbstractBug.bugID + ".txt");
-//        String tmp = bugDetails.toString();
-//        System.out.println(tmp);
-//        writer.write(tmp);
-//        writer.close();
+    public void readFile(){
+        BufferedReader fileIn;
+        String filename = "output.txt";
+        try {
+            fileIn = new BufferedReader(new FileReader(filename));
+            String line = fileIn.readLine();
+            while (line !=null){
+                System.out.println(line);
+                line = fileIn.readLine();
+            }
+            fileIn.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
 
