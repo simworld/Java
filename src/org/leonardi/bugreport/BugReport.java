@@ -3,6 +3,8 @@ package org.leonardi.bugreport;
 import org.leonardi.bugreport.model.Cosmetic;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static org.leonardi.bugreport.TemplateFactory.*;
@@ -12,9 +14,11 @@ public class BugReport {
 
         TemplateFactory bug1 = new TemplateFactory();
         String bugType = selectBugType();
-        bug1.printBug(buildBug(bug1.setBug(bugType)));
 
-        Scanner scanner = new Scanner (System.in);
+//        bug1.printBug(buildBug(bug1.setBug(bugType)));
+        bug1.createFile(buildBug(bug1.setBug(bugType)));
+
+//        Scanner scanner = new Scanner (System.in);
 //        int bugs;
 
         //bug1.createFile();

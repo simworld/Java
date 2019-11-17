@@ -37,7 +37,7 @@ public abstract class AbstractBug {
 
     public String getDate() { return date; }
 
-    public void setDate(String description) {
+    public void setDate(String date) {
         this.date = date;
     }
 

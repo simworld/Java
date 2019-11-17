@@ -4,15 +4,13 @@ import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
-import java.io.FileWriter;
 
 public class TemplateFactory {
 
@@ -177,14 +175,29 @@ public class TemplateFactory {
             }
         }
 
-//    public void createFile() throws IOException {
-//        //PrintWriter writer = new PrintWriter(AbstractBug.bugID + ".txt");
+    public void createFile(ArrayList bug) {
+        String fileName = "output.dat";
+        ObjectOutputStream fileOut;
+        try{
+            fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
+            for (int i=0; i<bug.size(); i++){
+                fileOut.writeObject(bug.get(i));
+                }
+            fileOut.close();
+            System.out.println("file saved.");
+        }
+        catch (IOException e){
+            System.out.println("IO Error: " + e.getMessage());
+        }
+
+
+
+//        PrintWriter writer = new PrintWriter(AbstractBug.bugID + ".txt");
 //        String tmp = bugDetails.toString();
 //        System.out.println(tmp);
-//        PrintWriter writer = new PrintWriter("/Users/sim/Desktop/output.txt");
 //        writer.write(tmp);
 //        writer.close();
-//    }
+    }
 }
 
     /* set the objects */
