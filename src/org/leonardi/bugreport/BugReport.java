@@ -10,14 +10,15 @@ import java.util.*;
 import static org.leonardi.bugreport.TemplateFactory.*;
 
 public class BugReport {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         TemplateFactory bug1 = new TemplateFactory();
         String bugType = selectBugType();
 
-//        bug1.printBug(buildBug(bug1.setBug(bugType)));
-        bug1.createFile(buildBug(bug1.setBug(bugType)));
-        bug1.readFile();
+
+        bug1.printBug(buildBug(bug1.setBug(bugType)));
+//        bug1.createFile(buildBug(bug1.setBug(bugType)));
+//        bug1.readFile();
 //        Scanner scanner = new Scanner (System.in);
 //        int bugs;
 

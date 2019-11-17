@@ -8,7 +8,24 @@ public abstract class AbstractBug {
     protected static int bugID;
     protected String summary;
     protected String date;
+    protected String actual;
+    protected String expected;
 
+    public String getActual() {
+        return actual;
+    }
+
+    public void setActual(String actual) {
+        this.actual = actual;
+    }
+
+    public String getExpected() {
+        return expected;
+    }
+
+    public void setExpected(String expected) {
+        this.expected = expected;
+    }
 
     public void incrementBugID(){
         if (bugID==0) {

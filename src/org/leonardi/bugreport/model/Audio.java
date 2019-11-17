@@ -6,25 +6,6 @@ public class Audio extends AbstractBug {
 
     private String stringID;
     private String rerecording;
-    private String actual;
-    private String expected;
-
-
-    public String getActual() {
-        return actual;
-    }
-
-    public void setActual(String actual) {
-        this.actual = actual;
-    }
-
-    public String getExpected() {
-        return expected;
-    }
-
-    public void setExpected(String expected) {
-        this.expected = expected;
-    }
 
     public String getStringID() {
         return stringID;

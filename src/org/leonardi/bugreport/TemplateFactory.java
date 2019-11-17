@@ -4,13 +4,11 @@ import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
+import java.awt.desktop.ScreenSleepEvent;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
 
 public class TemplateFactory {
 
@@ -18,6 +16,7 @@ public class TemplateFactory {
 
     ArrayList<AbstractBug> bugsContainer = new ArrayList<>();
     /* User selects the bug type */
+
 
     static String selectBugType(){
         System.out.println("Select between the bug types: Cosmetic, Audio or Code. ");
@@ -37,59 +36,121 @@ public class TemplateFactory {
         }
     }
 
+    /*Attempt to create one method for all the data */
+
+    public ArrayList userData(String bugType) {
+        // creating the arrays
+        ArrayList<String> dataContainer = new ArrayList<>();
+        String[] list = {"Select the priority 1 to 5: ", "Enter the summary: ", "Enter the description: ", "How do you reproduce the issue? ",
+                "Enter the actual result: ", "Enter the Expected result: ",};
+        ArrayList<String> test = new ArrayList<>(Arrays.asList(list));
+
+        //conditions by bug type
+        int range = 5;
+        if (bugType.equals("Cosmetic")) {
+            range += 1;
+            test.add("Enter the string ID: ");
+                    }
+        else if (bugType.equals("Audio")) {
+            range += 1;
+            test.add("Do you need a re-recording? Yes or No ");
+        }
+
+        //loop to prompt messages to user and populate the array with the inputs
+        for (int i = 0; i<range; i++) {
+                System.out.println(test.get(i));
+                Scanner userInput = new Scanner(System.in);
+                dataContainer.add(userInput.nextLine());
+        }
+        return dataContainer;
+
+    }
+
     /* methods to populate the various filed */
     public ArrayList<Object> bugDetails = new ArrayList<>();
 
-    static String askSummary(){
-        System.out.println("Enter the summary: ");
+    static String askSummary() throws Exception {
+        try {
+            System.out.println("Enter the summary: ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
     static String askDescription(){
-        System.out.println("Enter the description: ");
+        try {
+            System.out.println("Enter the description: ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
     static int askPriority(){
-        System.out.println("Select the priority 1 to 5: ");
+        try {
+            System.out.println("Select the priority 1 to 5: ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextInt();
     }
 
     static String askStringId(){
-        System.out.println("Enter the StingID: ");
+        try {
+            System.out.println("Enter the string ID: ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
     public String askStepToReproduce(){
-        System.out.println("How do you get to the issue? ");
+        try {
+            System.out.println("How do you reproduce the issue? ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
     public String askActualResult(){
-        System.out.println("Enter the actual result: ");
+        try {
+            System.out.println("Enter the actual result: ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
     public String askExpectedResult(){
-        System.out.println("Enter the expected result: ");
+        try {
+            System.out.println("Enter the expected result: ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
     public String askRerecording(){
-        System.out.println("Do you need a re-recording? Yes or No ");
+        try {
+            System.out.println("Do you need a re-recording? Yes or No ");
+        }catch (InputMismatchException e){
+            System.out.println("Error: " + e.getMessage());
+        }
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
 
-    public AbstractBug setBug(String bugType){
+    public AbstractBug setBug(String bugType) throws Exception {
 
         /*creating bug from the previous request of bug type */
         AbstractBug bug = createBug(bugType);
@@ -108,24 +169,18 @@ public class TemplateFactory {
         bug.setPriority(askPriority());
         bug.setStepToReproduce(askStepToReproduce());
         bug.setDate(strDate);
+        bug.setActual(askActualResult());
+        bug.setExpected(askExpectedResult());
+
 
         //conditions for specific bugs
         if (bug instanceof Cosmetic) {
-            ((Cosmetic) bug).setActual(askActualResult());
-            ((Cosmetic) bug).setExpected(askExpectedResult());
             ((Cosmetic) bug).setStringID(askStringId());
         }
 
         else if (bug instanceof Audio) {
-            ((Audio) bug).setActual(askActualResult());
-            ((Audio) bug).setExpected(askExpectedResult());
             ((Audio) bug).setStringID(askStringId());
             ((Audio) bug).setStringID(askRerecording());
-        }
-
-        else if (bug instanceof Code) {
-            ((Code) bug).setActual(askActualResult());
-            ((Code) bug).setExpected(askExpectedResult());
        }return bug;
     }
 
@@ -136,7 +191,7 @@ public class TemplateFactory {
          */
 
         //creating Array that will have the bug detail to print out in another method.
-        ArrayList<Object> bugArray = new ArrayList<>(); //perche' Object?
+        ArrayList<Object> bugArray = new ArrayList<>();
 
         //populating generic object data
         bugArray.add(bug.getBugID());
@@ -144,25 +199,18 @@ public class TemplateFactory {
         bugArray.add(bug.getDescription());
         bugArray.add(bug.getStepToReproduce());
         bugArray.add(bug.getDate());
+        bugArray.add(bug.getActual());
+        bugArray.add(bug.getExpected());
 
         //Conditions for specific bug type
         if (bug instanceof Cosmetic) {
-            bugArray.add(((Cosmetic) bug).getActual());
-            bugArray.add(((Cosmetic) bug).getExpected());
             bugArray.add(((Cosmetic) bug).getStringID());
         }
 
         else if (bug instanceof Audio) {
-            bugArray.add(((Audio) bug).getActual());
-            bugArray.add(((Audio) bug).getExpected());
             bugArray.add(((Audio) bug).getStringID());
             bugArray.add(((Audio) bug).getRerecording());
         }
-
-        else if (bug instanceof Code) {
-                bugArray.add(((Code) bug).getActual());
-                bugArray.add(((Code) bug).getExpected());
-            }
         return bugArray;
     }
 
@@ -204,6 +252,7 @@ public class TemplateFactory {
                 line = fileIn.readLine();
             }
             fileIn.close();
+            System.out.println("file read successfully.");
         }
         catch (IOException e){
             e.printStackTrace();
