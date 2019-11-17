@@ -21,7 +21,7 @@ public class TemplateFactory {
 
     /* User selects the bug type */
     static String selectBugType(){
-        System.out.println("Select between the bug types: Cosmetic, Audio or Code.");
+        System.out.println("Select between the bug types: Cosmetic, Audio or Code. ");
         Scanner userInput = new Scanner(System.in); //bugType as variable?
         return userInput.nextLine();
     }
