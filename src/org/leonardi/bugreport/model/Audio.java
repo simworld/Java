@@ -4,8 +4,8 @@ import org.leonardi.bugreport.AbstractBug;
 
 public class Audio extends AbstractBug {
 
-    private int stringID;
-    private int rerecording;
+    private String stringID;
+    private String rerecording;
     private String actual;
     private String expected;
 
@@ -26,19 +26,19 @@ public class Audio extends AbstractBug {
         this.expected = expected;
     }
 
-    public int getStringID() {
+    public String getStringID() {
         return stringID;
     }
 
-    public void setStringID(int stringID) {
+    public void setStringID(String stringID) {
         this.stringID = stringID;
     }
 
-    public int getRerecording() {
+    public String getRerecording() {
         return rerecording;
     }
 
-    public void setRerecording(int rerecording) {
+    public void setRerecording(String rerecording) {
         this.rerecording = rerecording;
     }
 

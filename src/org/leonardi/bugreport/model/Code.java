@@ -8,6 +8,7 @@ public class Code extends AbstractBug {
     private String expected;
     private String actual;
 
+
     public String getExpected() {
         return expected;
     }
