@@ -176,12 +176,13 @@ public class TemplateFactory {
         }
 
     public void createFile(ArrayList bug) {
-        String fileName = "output.dat";
-        ObjectOutputStream fileOut;
+        String fileName = "output.txt";
+        FileWriter fileOut;
         try{
-            fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
+            fileOut = new FileWriter(fileName);
             for (int i=0; i<bug.size(); i++){
-                fileOut.writeObject(bug.get(i));
+                String str = bug.get(i).toString();
+                fileOut.write(str);
                 }
             fileOut.close();
             System.out.println("file saved.");

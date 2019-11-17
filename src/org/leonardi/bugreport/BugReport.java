@@ -21,7 +21,6 @@ public class BugReport {
 //        Scanner scanner = new Scanner (System.in);
 //        int bugs;
 
-        //bug1.createFile();
 
 //        try{
 
