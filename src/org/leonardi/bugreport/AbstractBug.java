@@ -2,7 +2,7 @@ package org.leonardi.bugreport;
 
 public abstract class AbstractBug {
 
-    protected int priority;
+    protected String priority;
     protected String description;
     protected String stepToReproduce;
     protected static int bugID;
@@ -36,11 +36,11 @@ public abstract class AbstractBug {
         }
     }
 
-    public int getPriority() {
+    public String getPriority() {
         return priority;
     }
 
-    public void setPriority(int priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 
@@ -70,9 +70,9 @@ public abstract class AbstractBug {
         return bugID;
     }
 
-    public void setBugID(int bugID) {
-        this.bugID = bugID;
-    }
+//    public void setBugID(int bugID) {
+//        this.bugID = bugID;
+//    }
 
     public String getSummary() {
         return summary;
