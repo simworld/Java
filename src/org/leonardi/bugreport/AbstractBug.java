@@ -1,5 +1,7 @@
 package org.leonardi.bugreport;
 
+import java.util.ArrayList;
+
 public abstract class AbstractBug {
 
     protected String priority;
@@ -10,6 +12,10 @@ public abstract class AbstractBug {
     protected String date;
     protected String actual;
     protected String expected;
+
+
+    abstract public ArrayList bugContent();
+
 
     public String getActual() {
         return actual;

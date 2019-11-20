@@ -40,7 +40,7 @@ public class TemplateFactory {
 
     /*Attempt to create one method for all the data */
 
-    public ArrayList userData(String bugType) {
+    static ArrayList userData(String bugType) {
         // creating the arrays
         ArrayList<String> dataContainer = new ArrayList<>();
         String[] list = {"1. Select the priority High/Medium/Low: ", "2. Enter the summary: ", "3. Enter the description: ", "4. How do you reproduce the issue? ",
@@ -104,20 +104,16 @@ public class TemplateFactory {
 
         //conditions for specific bugs
         if (bug instanceof Cosmetic) {
-            ((Cosmetic) bug).setStringID(dataContainer.get(6));
+            ((Cosmetic) bug).setStringID((String) dataContainer.get(6));
         }
 
         else if (bug instanceof Audio) {
-            ((Audio) bug).setStringID(dataContainer.get(6));
-            ((Audio) bug).setRerecording(dataContainer.get(7));
+            ((Audio) bug).setStringID((String) dataContainer.get(6));
+            ((Audio) bug).setRerecording((String) dataContainer.get(7));
        }return bug;
     }
 
-    public ArrayList buildBug(AbstractBug bug){
-        /* - get bug
-           - create array
-           - populate bug with its specific content into the array
-         */
+    public ArrayList getContent(AbstractBug bug){
 
         //creating Array that will have the bug detail to print out in another method.
         ArrayList<Object> bugArray = new ArrayList<>();
@@ -145,13 +141,12 @@ public class TemplateFactory {
     }
 
 
-    //print method
-//    public void printBug (ArrayList bug){
-//        for (int i =0; i < bug.size(); i++){
-//            System.out.println(bug.get(i) + "\n");
-//
-//            }
-//        }
+    static void printBug (ArrayList bug){
+        for (int i =0; i < bug.size(); i++){
+            System.out.println(bug.get(i) + "\n");
+
+            }
+        }
 
     public void createFile(ArrayList bug) {
         String fileName = "output.txt";

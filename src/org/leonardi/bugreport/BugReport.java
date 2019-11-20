@@ -13,7 +13,10 @@ public class BugReport {
     public static void main(String[] args) throws Exception {
 
         TemplateFactory bug1 = new TemplateFactory();
-        //String bugType = selectBugType();
+
+        String bugType = selectBugType();
+
+        printBug(bug1.getContent(bug1.setBug(bugType, userData(bugType))));
 
 
 //        bug1.printBug((bug1.userData(selectBugType())));
@@ -21,30 +24,7 @@ public class BugReport {
 //        bug1.readFile();
 //        Scanner scanner = new Scanner (System.in);
 //        int bugs;
-        String cazzo = selectBugType();
-        bug1.createBug(cazzo);
-        bug1.setBug(cazzo, bug1.userData(cazzo));
-//        try{
 
-//            System.out.println("How many bugs do you want insert?");
-//            bugs = scanner.nextInt();
-//
-//            //Cosmetic test = new Cosmetic();
-//            TemplateFactory temp1 = new TemplateFactory();
-//
-//            for(int i=0; i<bugs; i++){
-//                temp1.selectBugType();
-////                test.setDescription(askDescription());
-////                test.setPriority(askPriority());
-////                test.setDate(askDate());
-//            }
-//        }
-//        catch (InputMismatchException e){
-//            System.out.println("Value should be a digit. Exit program");
-//        }
-//        finally {
-//            System.out.println("Thanks for submitting your bug(s)");
-//        }
 
 
 
