@@ -61,20 +61,15 @@ public class TemplateFactory {
 
         //loop to prompt messages to user and populate the array with the inputs
         // try/catch controllo stringa vuota
-        try{
             for (int i = 0; i<range; i++) {
                 System.out.println(test.get(i));
                 Scanner userInput = new Scanner(System.in);
 //                if userInput.hasNextLine() == true
                 dataContainer.add(userInput.nextLine());
             }
-            //return dataContainer;
-        }
-        catch (RuntimeException e){
-            System.out.println("Exit program");
-        }
+            return dataContainer;
 
-        return dataContainer;
+
     }
 
     /* methods to populate the various filed */
@@ -113,45 +108,45 @@ public class TemplateFactory {
        }return bug;
     }
 
-    public ArrayList buildBug(AbstractBug bug){
-        /* - get bug
-           - create array
-           - populate bug with its specific content into the array
-         */
-
-        //creating Array that will have the bug detail to print out in another method.
-        ArrayList<Object> bugArray = new ArrayList<>();
-
-        //populating generic object data
-        bugArray.add(bug.getPriority());
-        bugArray.add(bug.getBugID());
-        bugArray.add(bug.getSummary());
-        bugArray.add(bug.getDescription());
-        bugArray.add(bug.getStepToReproduce());
-        bugArray.add(bug.getDate());
-        bugArray.add(bug.getActual());
-        bugArray.add(bug.getExpected());
-
-        //Conditions for specific bug type
-        if (bug instanceof Cosmetic) {
-            bugArray.add(((Cosmetic) bug).getStringID());
-        }
-
-        else if (bug instanceof Audio) {
-            bugArray.add(((Audio) bug).getStringID());
-            bugArray.add(((Audio) bug).getRerecording());
-        }
-        return bugArray;
-    }
+//    static ArrayList buildBug(Object bug){
+//        /* - get bug
+//           - create array
+//           - populate bug with its specific content into the array
+//         */
+//
+//        //creating Array that will have the bug detail to print out in another method.
+//        ArrayList<Object> bugArray = new ArrayList<>();
+//
+//        //populating generic object data
+//        bugArray.add(((AbstractBug) bug).getPriority());
+//        bugArray.add(((AbstractBug) bug).getBugID());
+//        bugArray.add(((AbstractBug) bug).getSummary());
+//        bugArray.add(((AbstractBug) bug).getDescription());
+//        bugArray.add(((AbstractBug) bug).getStepToReproduce());
+//        bugArray.add(((AbstractBug) bug).getDate());
+//        bugArray.add(((AbstractBug) bug).getActual());
+//        bugArray.add(((AbstractBug) bug).getExpected());
+//
+//        //Conditions for specific bug type
+//        if (bug instanceof Cosmetic) {
+//            bugArray.add(((Cosmetic) bug).getStringID());
+//        }
+//
+//        else if (bug instanceof Audio) {
+//            bugArray.add(((Audio) bug).getStringID());
+//            bugArray.add(((Audio) bug).getRerecording());
+//        }
+//        return bugArray;
+//    }
 
 
     //print method
-//    public void printBug (ArrayList bug){
-//        for (int i =0; i < bug.size(); i++){
-//            System.out.println(bug.get(i) + "\n");
-//
-//            }
-//        }
+    public void printBug (ArrayList bug){
+        for (int i =0; i < bug.size(); i++){
+            System.out.println(bug.get(i) + "\n");
+
+            }
+        }
 
     public void createFile(ArrayList bug) {
         String fileName = "output.txt";

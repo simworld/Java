@@ -15,15 +15,17 @@ public class BugReport {
         TemplateFactory bug1 = new TemplateFactory();
         //String bugType = selectBugType();
 
+        String bugType = selectBugType();
+        bug1.createBug(bugType);
+        bug1.setBug(bugType, bug1.userData(bugType));
+      //  buildBug(bug1);
 
-//        bug1.printBug((bug1.userData(selectBugType())));
+        //        bug1.printBug((bug1.userData(selectBugType())));
 //        bug1.createFile((bug1.setBug()));
 //        bug1.readFile();
 //        Scanner scanner = new Scanner (System.in);
 //        int bugs;
-        String cazzo = selectBugType();
-        bug1.createBug(cazzo);
-        bug1.setBug(cazzo, bug1.userData(cazzo));
+
 //        try{
 
 //            System.out.println("How many bugs do you want insert?");
