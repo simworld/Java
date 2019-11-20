@@ -48,7 +48,7 @@ public class TemplateFactory {
         ArrayList<String> test = new ArrayList<>(Arrays.asList(list));
 
         //conditions by bug type
-        int range = 5;
+        int range = 6;
         if (bugType.equals("Cosmetic")) {
             range += 1;
             test.add("7. Enter the string ID: ");
