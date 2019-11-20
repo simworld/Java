@@ -79,7 +79,7 @@ public class TemplateFactory {
 
     /* methods to populate the various filed */
 
-    public AbstractBug setBug(String bugType, ArrayList<String> dataContainer) throws Exception {
+    public AbstractBug setBug(String bugType, ArrayList dataContainer) throws Exception {
 
         /*creating bug from the previous request of bug type */
         AbstractBug bug = createBug(bugType);
@@ -93,13 +93,13 @@ public class TemplateFactory {
         String strDate = dateFormat.format(date);
 
         //populating the objects
-        bug.setPriority(dataContainer.get(0));
-        bug.setSummary(dataContainer.get(1));
-        bug.setDescription(dataContainer.get(2));
-        bug.setStepToReproduce(dataContainer.get(3));
+        bug.setPriority((String) dataContainer.get(0));
+        bug.setSummary((String) dataContainer.get(1));
+        bug.setDescription((String) dataContainer.get(2));
+        bug.setStepToReproduce((String) dataContainer.get(3));
         bug.setDate(strDate);
-        bug.setActual(dataContainer.get(4));
-        bug.setExpected(dataContainer.get(5));
+        bug.setActual((String) dataContainer.get(4));
+        bug.setExpected((String) dataContainer.get(5));
 
 
         //conditions for specific bugs
