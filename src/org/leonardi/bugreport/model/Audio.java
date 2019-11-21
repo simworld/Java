@@ -12,8 +12,8 @@ public class Audio extends AbstractBug {
     public ArrayList globalGet() {
 
         //populating generic object data
-        bugArray.add(getPriority());
         bugArray.add(getBugID());
+        bugArray.add(getPriority());
         bugArray.add(getSummary());
         bugArray.add(getDescription());
         bugArray.add(getStepToReproduce());

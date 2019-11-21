@@ -53,9 +53,6 @@ public abstract class AbstractBug {
 
     public ArrayList globalGet() {
 
-        //creating Array that will have the bug detail to print out in another method.
-
-
         //populating generic object data
         bugArray.add(getBugID());
         bugArray.add(getPriority());
