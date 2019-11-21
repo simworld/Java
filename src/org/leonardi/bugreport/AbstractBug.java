@@ -20,17 +20,23 @@ public abstract class AbstractBug {
     protected String actual;
     protected String expected;
 
+    public ArrayList<Object> bugArray = new ArrayList<>();
 
-    private static String dateToString() {
+    public void incrementBugID() {
+        if (bugID == 0) {
+            bugID = 1;
+        } else {
+            bugID++;
+        }
+    }
+
+    protected static String dateToString() {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         return dateFormat.format(date);
     }
 
-
-    public void globalSet(AbstractBug entry, ArrayList<String> details) {
-
-        entry.incrementBugID();
+    public void globalSet(ArrayList<String> details) {
 
         this.priority = details.get(0);
         this.summary = details.get(1);
@@ -42,23 +48,10 @@ public abstract class AbstractBug {
 
     }
 
-    /* Generates the bug upon request */
-    static AbstractBug createBug(String bugType) {
-
-        switch (bugType) {
-            case "Cosmetic":
-                return new Cosmetic();
-            case "Audio":
-                return new Audio();
-            default:
-                return new Code();
-        }
-    }
-
-    public ArrayList getGlobal(AbstractBug bug) {
+    public ArrayList globalGet(AbstractBug bug) {
 
         //creating Array that will have the bug detail to print out in another method.
-        ArrayList<Object> bugArray = new ArrayList<>();
+
 
         //populating generic object data
         bugArray.add(bug.getBugID());
@@ -86,6 +79,16 @@ public abstract class AbstractBug {
         }
     }
 
+
+
+
+
+
+    // setters and getters
+    public String getPriority() {
+        return priority;
+    }
+
     public String getActual() {
         return actual;
     }
@@ -100,18 +103,6 @@ public abstract class AbstractBug {
 
     public void setExpected(String expected) {
         this.expected = expected;
-    }
-
-    public void incrementBugID() {
-        if (bugID == 0) {
-            bugID = 1;
-        } else {
-            bugID++;
-        }
-    }
-
-    public String getPriority() {
-        return priority;
     }
 
     public void setPriority(String priority) {

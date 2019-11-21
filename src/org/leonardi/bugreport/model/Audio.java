@@ -9,23 +9,37 @@ public class Audio extends AbstractBug {
     private String stringID;
     private String rerecording;
 
-    public ArrayList bugContent() {
-        ArrayList<Object> bugAudio = new ArrayList<>();
+    public ArrayList globalGet() {
 
         //populating generic object data
-        bugAudio.add(getPriority());
-        bugAudio.add(getBugID());
-        bugAudio.add(getSummary());
-        bugAudio.add(getDescription());
-        bugAudio.add(getStepToReproduce());
-        bugAudio.add(getDate());
-        bugAudio.add(getActual());
-        bugAudio.add(getExpected());
-        bugAudio.add(getStringID());
-        bugAudio.add(getRerecording());
+        bugArray.add(getPriority());
+        bugArray.add(getBugID());
+        bugArray.add(getSummary());
+        bugArray.add(getDescription());
+        bugArray.add(getStepToReproduce());
+        bugArray.add(getDate());
+        bugArray.add(getActual());
+        bugArray.add(getExpected());
+        bugArray.add(getStringID());
+        bugArray.add(getRerecording());
 
+        return bugArray;
+    }
 
-        return bugAudio;
+    public void globalSet(AbstractBug entry, ArrayList<String> details) {
+
+        entry.incrementBugID();
+
+        this.priority = details.get(0);
+        this.summary = details.get(1);
+        this.description = details.get(2);
+        this.stepToReproduce = details.get(3);
+        this.actual = details.get(4);
+        this.expected = details.get(5);
+        this.stringID = details.get(6);
+        this.rerecording = details.get(7);
+        this.date = dateToString();
+
     }
 
     public String getStringID() {
