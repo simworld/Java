@@ -1,12 +1,6 @@
 package org.leonardi.bugreport;
 
-import org.leonardi.bugreport.model.Audio;
-import org.leonardi.bugreport.model.Code;
-import org.leonardi.bugreport.model.Cosmetic;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
 
 public abstract class AbstractBug {
 
@@ -20,74 +14,8 @@ public abstract class AbstractBug {
     protected String expected;
 
 
-    public void incrementBugID() {
-        if (bugID == 0) {
-            bugID = 1;
-        } else {
-            bugID++;
-        }
-    }
+    abstract public ArrayList bugContent();
 
-    private static String dateToString() {
-        Date date = Calendar.getInstance().getTime();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-        return dateFormat.format(date);
-    }
-
-    public void globalSet(AbstractBug entry, ArrayList<String> details) {
-
-        entry.incrementBugID();
-
-        this.priority = details.get(0);
-        this.summary = details.get(1);
-        this.description = details.get(2);
-        this.stepToReproduce = details.get(3);
-        this.actual = details.get(4);
-        this.expected = details.get(5);
-        this.date = dateToString();
-
-    }
-
-    public ArrayList getGlobal(AbstractBug bug) {
-
-        //creating Array that will have the bug detail to print out in another method.
-        ArrayList<Object> bugArray = new ArrayList<>();
-
-        //populating generic object data
-        bugArray.add(bug.getBugID());
-        bugArray.add(bug.getPriority());
-        bugArray.add(bug.getSummary());
-        bugArray.add(bug.getDescription());
-        bugArray.add(bug.getStepToReproduce());
-        bugArray.add(bug.getDate());
-        bugArray.add(bug.getActual());
-        bugArray.add(bug.getExpected());
-
-        //Conditions for specific bug type
-        if (bug instanceof Cosmetic) {
-            bugArray.add(((Cosmetic) bug).getStringID());
-        } else if (bug instanceof Audio) {
-            bugArray.add(((Audio) bug).getStringID());
-            bugArray.add(((Audio) bug).getRerecording());
-        }
-        return bugArray;
-    }
-
-    public void print(ArrayList bug) {
-        for (Object o : bug) {
-            System.out.println(o + "\n");
-        }
-    }
-
-
-
-
-
-
-    // setters and getters
-    public String getPriority() {
-        return priority;
-    }
 
     public String getActual() {
         return actual;
@@ -105,6 +33,19 @@ public abstract class AbstractBug {
         this.expected = expected;
     }
 
+    public void incrementBugID(){
+        if (bugID==0) {
+            bugID = 1;
+        }
+        else {
+            bugID++;
+        }
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
     public void setPriority(String priority) {
         this.priority = priority;
     }
@@ -117,9 +58,7 @@ public abstract class AbstractBug {
         this.description = description;
     }
 
-    public String getDate() {
-        return date;
-    }
+    public String getDate() { return date; }
 
     public void setDate(String date) {
         this.date = date;
@@ -137,6 +76,10 @@ public abstract class AbstractBug {
         return bugID;
     }
 
+//    public void setBugID(int bugID) {
+//        this.bugID = bugID;
+//    }
+
     public String getSummary() {
         return summary;
     }
@@ -144,5 +87,6 @@ public abstract class AbstractBug {
     public void setSummary(String summary) {
         this.summary = summary;
     }
+
 
 }

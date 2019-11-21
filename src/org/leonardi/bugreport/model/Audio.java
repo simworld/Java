@@ -24,6 +24,7 @@ public class Audio extends AbstractBug {
         bugAudio.add(getStringID());
         bugAudio.add(getRerecording());
 
+
         return bugAudio;
     }
 
