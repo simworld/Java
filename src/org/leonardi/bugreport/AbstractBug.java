@@ -21,12 +21,19 @@ public abstract class AbstractBug {
     protected String expected;
 
 
+    public void incrementBugID() {
+        if (bugID == 0) {
+            bugID = 1;
+        } else {
+            bugID++;
+        }
+    }
+
     private static String dateToString() {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         return dateFormat.format(date);
     }
-
 
     public void globalSet(AbstractBug entry, ArrayList<String> details) {
 
@@ -40,19 +47,6 @@ public abstract class AbstractBug {
         this.expected = details.get(5);
         this.date = dateToString();
 
-    }
-
-    /* Generates the bug upon request */
-    static AbstractBug createBug(String bugType) {
-
-        switch (bugType) {
-            case "Cosmetic":
-                return new Cosmetic();
-            case "Audio":
-                return new Audio();
-            default:
-                return new Code();
-        }
     }
 
     public ArrayList getGlobal(AbstractBug bug) {
@@ -86,6 +80,16 @@ public abstract class AbstractBug {
         }
     }
 
+
+
+
+
+
+    // setters and getters
+    public String getPriority() {
+        return priority;
+    }
+
     public String getActual() {
         return actual;
     }
@@ -100,18 +104,6 @@ public abstract class AbstractBug {
 
     public void setExpected(String expected) {
         this.expected = expected;
-    }
-
-    public void incrementBugID() {
-        if (bugID == 0) {
-            bugID = 1;
-        } else {
-            bugID++;
-        }
-    }
-
-    public String getPriority() {
-        return priority;
     }
 
     public void setPriority(String priority) {

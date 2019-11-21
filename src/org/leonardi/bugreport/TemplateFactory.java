@@ -14,8 +14,6 @@ public class TemplateFactory {
 
 
     /* User selects the bug type */
-
-
     static String selectBugType() {
         //fare try/catch controllo stringa case sensitive
         System.out.println("Select between the bug types: Cosmetic, Audio or Code. ");
@@ -23,6 +21,7 @@ public class TemplateFactory {
         return userInput.nextLine();
     }
 
+    //method to collect all the user input into an array
     static ArrayList UserData(Object obj) {
 
         int range = 6;
