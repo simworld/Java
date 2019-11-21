@@ -9,7 +9,6 @@ public class Cosmetic extends AbstractBug {
 
     private String stringID;
 
-
     public ArrayList bugContent() {
         ArrayList<Object> bugCosmetic = new ArrayList<>();
 
@@ -23,7 +22,6 @@ public class Cosmetic extends AbstractBug {
         bugCosmetic.add(getActual());
         bugCosmetic.add(getExpected());
         bugCosmetic.add(getStringID());
-
 
         return bugCosmetic;
     }
