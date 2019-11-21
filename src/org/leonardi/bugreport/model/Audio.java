@@ -26,9 +26,7 @@ public class Audio extends AbstractBug {
         return bugArray;
     }
 
-    public void globalSet(AbstractBug entry, ArrayList<String> details) {
-
-        entry.incrementBugID();
+    public void globalSet(ArrayList<String> details) {
 
         this.priority = details.get(0);
         this.summary = details.get(1);

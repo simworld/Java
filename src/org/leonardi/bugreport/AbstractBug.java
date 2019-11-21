@@ -48,28 +48,21 @@ public abstract class AbstractBug {
 
     }
 
-    public ArrayList globalGet(AbstractBug bug) {
+    public ArrayList globalGet() {
 
         //creating Array that will have the bug detail to print out in another method.
 
 
         //populating generic object data
-        bugArray.add(bug.getBugID());
-        bugArray.add(bug.getPriority());
-        bugArray.add(bug.getSummary());
-        bugArray.add(bug.getDescription());
-        bugArray.add(bug.getStepToReproduce());
-        bugArray.add(bug.getDate());
-        bugArray.add(bug.getActual());
-        bugArray.add(bug.getExpected());
+        bugArray.add(getBugID());
+        bugArray.add(getPriority());
+        bugArray.add(getSummary());
+        bugArray.add(getDescription());
+        bugArray.add(getStepToReproduce());
+        bugArray.add(getDate());
+        bugArray.add(getActual());
+        bugArray.add(getExpected());
 
-        //Conditions for specific bug type
-        if (bug instanceof Cosmetic) {
-            bugArray.add(((Cosmetic) bug).getStringID());
-        } else if (bug instanceof Audio) {
-            bugArray.add(((Audio) bug).getStringID());
-            bugArray.add(((Audio) bug).getRerecording());
-        }
         return bugArray;
     }
 
