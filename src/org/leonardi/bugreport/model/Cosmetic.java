@@ -9,21 +9,34 @@ public class Cosmetic extends AbstractBug {
 
     private String stringID;
 
-    public ArrayList bugContent() {
-        ArrayList<Object> bugCosmetic = new ArrayList<>();
+
+    public ArrayList globalGet() {
 
         //populating generic object data
-        bugCosmetic.add(getPriority());
-        bugCosmetic.add(getBugID());
-        bugCosmetic.add(getSummary());
-        bugCosmetic.add(getDescription());
-        bugCosmetic.add(getStepToReproduce());
-        bugCosmetic.add(getDate());
-        bugCosmetic.add(getActual());
-        bugCosmetic.add(getExpected());
-        bugCosmetic.add(getStringID());
+        bugArray.add(getPriority());
+        bugArray.add(getBugID());
+        bugArray.add(getSummary());
+        bugArray.add(getDescription());
+        bugArray.add(getStepToReproduce());
+        bugArray.add(getDate());
+        bugArray.add(getActual());
+        bugArray.add(getExpected());
+        bugArray.add(getStringID());
 
-        return bugCosmetic;
+        return bugArray;
+    }
+
+    public void globalSet(ArrayList<String> details) {
+
+        this.priority = details.get(0);
+        this.summary = details.get(1);
+        this.description = details.get(2);
+        this.stepToReproduce = details.get(3);
+        this.actual = details.get(4);
+        this.expected = details.get(5);
+        this.stringID = details.get(6);
+        this.date = dateToString();
+
     }
 
     public String getStringID() {

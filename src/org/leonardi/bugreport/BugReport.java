@@ -1,6 +1,5 @@
 package org.leonardi.bugreport;
 
-import org.leonardi.bugreport.model.Cosmetic;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -26,10 +25,12 @@ public class BugReport {
         ArrayList value = UserData(bug1);
 
         //setting the object with the array of details
-        bug1.globalSet(bug1, value);
+        bug1.globalSet(value);
+
+        bug1.incrementBugID();
 
         //Printing the array
-        bug1.print(bug1.getGlobal(bug1));
+        bug1.print(bug1.globalGet(bug1));
 
     }
 
