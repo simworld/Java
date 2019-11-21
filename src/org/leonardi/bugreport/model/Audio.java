@@ -13,11 +13,11 @@ public class Audio extends AbstractBug {
 
         //populating generic object data
         bugArray.add(getBugID());
+        bugArray.add(getDate());
         bugArray.add(getPriority());
         bugArray.add(getSummary());
         bugArray.add(getDescription());
         bugArray.add(getStepToReproduce());
-        bugArray.add(getDate());
         bugArray.add(getActual());
         bugArray.add(getExpected());
         bugArray.add(getStringID());
@@ -40,7 +40,7 @@ public class Audio extends AbstractBug {
 
     }
 
-    public String getStringID() {
+    private String getStringID() {
         return stringID;
     }
 
@@ -48,7 +48,7 @@ public class Audio extends AbstractBug {
         this.stringID = stringID;
     }
 
-    public String getRerecording() {
+    private String getRerecording() {
         return rerecording;
     }
 
