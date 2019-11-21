@@ -71,7 +71,6 @@ public class TemplateFactory {
                 return new Audio();
             default:
                 return new Code();
-        }
     }
 
     public void createFile(ArrayList bug) {

@@ -1,6 +1,5 @@
 package org.leonardi.bugreport;
 
-import javafx.scene.shape.Circle;
 import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
