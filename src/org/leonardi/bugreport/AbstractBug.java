@@ -76,7 +76,7 @@ public abstract class AbstractBug {
     }
 
     public void createFile(ArrayList bug) {
-        String fileName = "output.txt";
+        String fileName = "bugID_" + bugID + ".txt";
         FileWriter fileOut;
         try {
             fileOut = new FileWriter(fileName);
@@ -94,9 +94,9 @@ public abstract class AbstractBug {
 
     public void readFile() {
         BufferedReader fileIn;
-        String filename = "output.txt";
+        String fileName = "bugID_" + bugID + ".txt";
         try {
-            fileIn = new BufferedReader(new FileReader(filename));
+            fileIn = new BufferedReader(new FileReader(fileName));
             String line = fileIn.readLine();
             while (line != null) {
                 System.out.println(line);
