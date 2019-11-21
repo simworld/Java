@@ -74,40 +74,6 @@ public class TemplateFactory {
                 return new Code();
         }
     }
-
-    public void createFile(ArrayList bug) {
-        String fileName = "output.txt";
-        FileWriter fileOut;
-        try {
-            fileOut = new FileWriter(fileName);
-            for (int i = 0; i < bug.size(); i++) {
-                String str = bug.get(i).toString();
-                fileOut.write(str + "\n");
-            }
-            fileOut.close();
-            System.out.println("file saved.");
-        } catch (IOException e) {
-            System.out.println("IO Error: " + e.getMessage());
-        }
-    }
-
-
-    public void readFile() {
-        BufferedReader fileIn;
-        String filename = "output.txt";
-        try {
-            fileIn = new BufferedReader(new FileReader(filename));
-            String line = fileIn.readLine();
-            while (line != null) {
-                System.out.println(line);
-                line = fileIn.readLine();
-            }
-            fileIn.close();
-            System.out.println("File read successfully.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 

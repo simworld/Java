@@ -1,10 +1,13 @@
 package org.leonardi.bugreport;
 
-import javafx.scene.shape.Circle;
 import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -72,6 +75,39 @@ public abstract class AbstractBug {
         }
     }
 
+    public void createFile(ArrayList bug) {
+        String fileName = "output.txt";
+        FileWriter fileOut;
+        try {
+            fileOut = new FileWriter(fileName);
+            for (int i = 0; i < bug.size(); i++) {
+                String str = bug.get(i).toString();
+                fileOut.write(str + "\n");
+            }
+            fileOut.close();
+            System.out.println("file saved.");
+        } catch (IOException e) {
+            System.out.println("IO Error: " + e.getMessage());
+        }
+    }
+
+
+    public void readFile() {
+        BufferedReader fileIn;
+        String filename = "output.txt";
+        try {
+            fileIn = new BufferedReader(new FileReader(filename));
+            String line = fileIn.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = fileIn.readLine();
+            }
+            fileIn.close();
+            System.out.println("File read successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

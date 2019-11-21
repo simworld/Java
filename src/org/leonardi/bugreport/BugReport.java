@@ -30,8 +30,13 @@ public class BugReport {
         bug1.incrementBugID();
 
         //Printing the array
-        bug1.print(bug1.globalGet(bug1));
+        //bug1.print(bug1.globalGet(bug1));
 
+        //Create the file and save the input data
+        bug1.createFile(bug1.globalGet(bug1));
+
+        //Read the file
+        bug1.readFile();
     }
 
 }
