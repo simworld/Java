@@ -30,6 +30,19 @@ public class BugReport {
 
 
 
+
+
+//        String bugType = selectBugType();
+//
+//        printBug(bug1.getContent(bug1.setBug(bugType, userData(bugType))));
+
+
+//        bug1.printBug((bug1.userData(selectBugType())));
+//        bug1.createFile((bug1.setBug()));
+//        bug1.readFile();
+//        Scanner scanner = new Scanner (System.in);
+//        int bugs;
+
     }
 
 }
