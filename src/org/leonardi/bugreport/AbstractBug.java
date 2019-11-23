@@ -87,21 +87,28 @@ public abstract class AbstractBug {
                 fields.add("String ID: ");
             } else if (o instanceof Audio){
                 fields.add("String ID: ");
-                fields.add("Rerecording");
+                fields.add("Recording");
             }
             System.out.println(fields.get(i));
             System.out.println(bug.get(i) + "\n");
         }
     }
-
-    void createFile(ArrayList bug) {
+    void createFile(ArrayList bug, AbstractBug o) {
         String fileName = "bugID_" + bugID + ".txt";
         FileWriter fileOut;
         try {
             fileOut = new FileWriter(fileName);
-            for (Object o : bug) {
-                String str = o.toString();
-                fileOut.write(str + "\n");
+            for (int i =0; i<bug.size();i++) {
+                if (o instanceof Cosmetic){ fields.add("String ID: ");
+                }
+                else if (o instanceof Audio){
+                    fields.add("String ID: ");
+                    fields.add("Recording: ");
+                }
+
+                String str = bug.get(i).toString();
+                String f = fields.get(i);
+                fileOut.write(f + str + "\n");
             }
             fileOut.close();
             System.out.println("file saved.");
@@ -109,6 +116,22 @@ public abstract class AbstractBug {
             System.out.println("IO Error: " + e.getMessage());
         }
     }
+
+//    void createFile(ArrayList bug) {
+//        String fileName = "bugID_" + bugID + ".txt";
+//        FileWriter fileOut;
+//        try {
+//            fileOut = new FileWriter(fileName);
+//            for (Object o : bug) {
+//                String str = o.toString();
+//                fileOut.write(str + "\n");
+//            }
+//            fileOut.close();
+//            System.out.println("file saved.");
+//        } catch (IOException e) {
+//            System.out.println("IO Error: " + e.getMessage());
+//        }
+//    }
 
     void readFile() {
         BufferedReader fileIn;

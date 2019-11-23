@@ -13,24 +13,24 @@ public class BugReport {
         TemplateFactory factory = new TemplateFactory();
 
         //user input asking for the type
-//        String type = selectBugType();
+        String type = selectBugType();
 //
 //        //creating the specific object
-//        AbstractBug bug1 = factory.createBug(type);
+        AbstractBug bug1 = factory.createBug(type);
 //
 //        //Array containing the data for the user according to the bug type
-//        ArrayList value = UserData(bug1);
+        ArrayList value = UserData(bug1);
 //
 //        //setting the object with the array of details
-//        bug1.globalSet(value);
-//
-//        bug1.incrementBugID();
+        bug1.globalSet(value);
+
+        bug1.incrementBugID();
 
         //Printing the array
-        bug1.print(bug1.globalGet(), bug1);
+        //bug1.print(bug1.globalGet(), bug1);
 
         //Create the file and save the input data
-//        bug1.createFile(bug1.globalGet());
+        //bug1.createFile(bug1.globalGet(), bug1);
 //
 //        //Read the file
 //        bug1.readFile();
