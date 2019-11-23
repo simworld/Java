@@ -74,6 +74,15 @@ public class App extends JFrame {
         openBugButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFileChooser open = new JFileChooser();
+                int status = open.showOpenDialog(null);
+                if (status == JFileChooser.APPROVE_OPTION){
+                    File file = open.getSelectedFile();
+                    if (file == null){
+                        return;
+                    }
+                    //String fileName = open.getSelectedFile().getAbsolutePath();
+                }
 
             }
         });
