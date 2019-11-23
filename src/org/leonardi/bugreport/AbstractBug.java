@@ -4,6 +4,7 @@ import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
