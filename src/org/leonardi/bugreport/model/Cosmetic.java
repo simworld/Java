@@ -13,12 +13,12 @@ public class Cosmetic extends AbstractBug {
     public ArrayList globalGet() {
 
         //populating generic object data
-        bugArray.add(getPriority());
         bugArray.add(getBugID());
+        bugArray.add(getDate());
+        bugArray.add(getPriority());
         bugArray.add(getSummary());
         bugArray.add(getDescription());
         bugArray.add(getStepToReproduce());
-        bugArray.add(getDate());
         bugArray.add(getActual());
         bugArray.add(getExpected());
         bugArray.add(getStringID());
@@ -39,7 +39,7 @@ public class Cosmetic extends AbstractBug {
 
     }
 
-    public String getStringID() {
+    private String getStringID() {
         return stringID;
     }
 

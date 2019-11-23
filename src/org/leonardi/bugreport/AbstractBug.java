@@ -18,15 +18,28 @@ public abstract class AbstractBug {
     protected String priority;
     protected String description;
     protected String stepToReproduce;
-    protected static int bugID;
+    private static int bugID;
     protected String summary;
     protected String date;
     protected String actual;
     protected String expected;
 
-    public ArrayList<Object> bugArray = new ArrayList<>();
+    protected ArrayList<Object> bugArray = new ArrayList<>();
+    private ArrayList<String> fields = new ArrayList<>(){
+        {
+            add("BugID: ");
+            add("Date: ");
+            add("Priority: ");
+            add("Summary: ");
+            add("Description: ");
+            add("Step to reproduce: ");
+            add("Actual: ");
+            add("Expected: ");
+        }
+    };
 
-    public void incrementBugID() {
+
+    void incrementBugID() {
         if (bugID == 0) {
             bugID = 1;
         } else {
@@ -54,35 +67,40 @@ public abstract class AbstractBug {
 
     public ArrayList globalGet() {
 
-        //creating Array that will have the bug detail to print out in another method.
-
-
         //populating generic object data
         bugArray.add(getBugID());
+        bugArray.add(getDate());
         bugArray.add(getPriority());
         bugArray.add(getSummary());
         bugArray.add(getDescription());
         bugArray.add(getStepToReproduce());
-        bugArray.add(getDate());
         bugArray.add(getActual());
         bugArray.add(getExpected());
 
         return bugArray;
     }
 
-    public void print(ArrayList bug) {
-        for (Object o : bug) {
-            System.out.println(o + "\n");
+    void print(ArrayList bug, AbstractBug o) {
+
+        for (int i = 0; i<bug.size(); i++) {
+            if (o instanceof Cosmetic){
+                fields.add("String ID: ");
+            } else if (o instanceof Audio){
+                fields.add("String ID: ");
+                fields.add("Rerecording");
+            }
+            System.out.println(fields.get(i));
+            System.out.println(bug.get(i) + "\n");
         }
     }
 
-    public void createFile(ArrayList bug) {
+    void createFile(ArrayList bug) {
         String fileName = "bugID_" + bugID + ".txt";
         FileWriter fileOut;
         try {
             fileOut = new FileWriter(fileName);
-            for (int i = 0; i < bug.size(); i++) {
-                String str = bug.get(i).toString();
+            for (Object o : bug) {
+                String str = o.toString();
                 fileOut.write(str + "\n");
             }
             fileOut.close();
@@ -92,8 +110,7 @@ public abstract class AbstractBug {
         }
     }
 
-
-    public void readFile() {
+    void readFile() {
         BufferedReader fileIn;
         String fileName = "bugID_" + bugID + ".txt";
         try {
