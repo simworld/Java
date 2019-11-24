@@ -5,6 +5,7 @@ import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -36,18 +37,26 @@ public class MainTest {
         bug2.setPriority(1);
         bug2.setRerecording("Yes");
 
+        bug2.setPriority(1);
+        bug3.setDescription("DES");
+        bug3.setStepToReproduce("123");
         bug3.setId(3);
+        bug1.setSummary("SUM");
         bug3.setDate(Calendar.getInstance().getTime());
         bug3.setActual("ACT");
-        bug2.setPriority(1);
-        bug1.setSummary("SUM");
-        bug3.setDescription("DES");
         bug3.setExpected("EXP");
-        bug3.setStepToReproduce("123");
 
-        bug1.toString();
-        bug2.toString();
-        bug3.toString();
+        System.out.println(bug1.toString());
+        System.out.println(bug2.toString());
+        System.out.println(bug3.toString());
+
+        ArrayList<AbstractBug> bugs = new ArrayList<>();
+        bugs.add(bug1);
+        bugs.add(bug2);
+        bugs.add(bug3);
+
+
+
 
 
 
