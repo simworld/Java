@@ -1,28 +1,33 @@
 package org.leonardi.bugreport;
 
-import org.leonardi.bugreport.model.Audio;
-import org.leonardi.bugreport.model.Code;
-import org.leonardi.bugreport.model.Cosmetic;
-
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Scanner;
 
 public class MainTest {
 
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
 
         int bugID = 0;
 
-        AbstractBug bug1 = Processes.createBugFromUserInput();
-        System.out.println(bug1.toString());
-        bug1.setId(bugID + 1);
+        Database database = new Database();
 
-        AbstractBug bug2 = Processes.createBugFromUserInput();
+        AbstractBug bug1 = UserInput.createBugFromUserInput();
+        bugID++;
+        bug1.setId(bugID);
+        database.addBug(bug1);
+
+        AbstractBug bug2 = UserInput.createBugFromUserInput();
+        bugID++;
+        bug2.setId(bugID);
+        database.addBug(bug2);
+
+        System.out.println(bug1.toString());
         System.out.println(bug2.toString());
-        bug2.setId(bugID + 1);
+
+        System.out.println(database.searchBug(1).toString());
+
+
+
 
 
 //        Cosmetic bug1 = new Cosmetic();
@@ -69,11 +74,6 @@ public class MainTest {
 //        bugs.add(bug1);
 //        bugs.add(bug2);
 //        bugs.add(bug3);
-
-
-
-
-
 
 
 //        Scanner fileIn;
