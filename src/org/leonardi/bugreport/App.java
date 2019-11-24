@@ -1,14 +1,17 @@
 package org.leonardi.bugreport;
 
+import org.leonardi.bugreport.model.Cosmetic;
+
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ContainerAdapter;
-import java.awt.event.ContainerEvent;
+import java.awt.event.*;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 public class App extends JFrame {
     public JPanel mainPanel;
@@ -17,6 +20,10 @@ public class App extends JFrame {
     private JButton provaButton;
     private JTextPane textPane1;
     private JButton openBugButton;
+    private JTextArea textArea;
+    private JRadioButton cosmeticRadioButton;
+    private JRadioButton codeRadioButton;
+    private JRadioButton audioRadioButton;
     public JMenu file;
     private JMenuItem newBug, openBug;
 
@@ -26,7 +33,9 @@ public class App extends JFrame {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
+        this.setVisible(true);
         this.pack();
+
 
 //        JFrame f = new JFrame("Bug Report");
 //        JMenuBar mb = new JMenuBar();
@@ -43,48 +52,98 @@ public class App extends JFrame {
 //        f.setLayout(null);
 //        f.setVisible(true);
 
+        ButtonGroup group = new ButtonGroup();
+        group.add(cosmeticRadioButton);
+        group.add(audioRadioButton);
+        group.add(codeRadioButton);
 
         newBugButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    bugField.getText();
+                String select = "";
 
-                    TemplateFactory factory = new TemplateFactory();
-                    //String type = TemplateFactory.selectBugType();
-
-                    //creating the specific object
-                    AbstractBug bug1 = factory.createBug(bugField.getText());
-                    //Array containing the data for the user according to the bug type
-                    System.out.println(bug1);
-                    ArrayList value = TemplateFactory.UserData(bug1);
-
-                    //setting the object with the array of details
-                    bug1.globalSet(value);
-
-                    bug1.incrementBugID();
-
-
+                if (cosmeticRadioButton.isSelected()) {
+                    System.out.println("Cosmetic");
+                    select = cosmeticRadioButton.getText();
                 }
+                if (audioRadioButton.isSelected()) {
+                    select = audioRadioButton.getText();
+                }
+                if (codeRadioButton.isSelected()) {
+                    select = codeRadioButton.getText();
+                }
+
+                TemplateFactory factory = new TemplateFactory();
+                //String type = TemplateFactory.selectBugType();
+
+                //creating the specific object
+
+                AbstractBug bug1 = factory.createBug(select);
+                //Array containing the data for the user according to the bug type
+                //System.out.println(bug1);
+                ArrayList value = TemplateFactory.UserData(bug1);
+
+                //setting the object with the array of details
+                bug1.globalSet(value);
+
+                bug1.incrementBugID();
+
+                bug1.createFile(bug1.globalGet(), bug1);
+
+
+            }
 
 //            }
 
 
         });
+
         openBugButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser open = new JFileChooser();
                 int status = open.showOpenDialog(null);
-                if (status == JFileChooser.APPROVE_OPTION){
+                if (status == JFileChooser.APPROVE_OPTION) {
                     File file = open.getSelectedFile();
-                    if (file == null){
-                        return;
+                    try {
+                        BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+                        textArea.read(input, "Reading file");
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
-                    //String fileName = open.getSelectedFile().getAbsolutePath();
                 }
+                else {
+                    System.out.println("Operation Cancelled");
+                }
+
+                    //String fileName = open.getSelectedFile().getAbsolutePath();
 
             }
         });
     }
 }
+
+//        cosmeticRadioButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                    System.out.println("cosmetic");
+//                    cosmeticRadioButton.getText();
+//            }
+//        });
+//        audioRadioButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("audio");
+//                String t = "Audio";
+//            }
+//        });
+//        codeRadioButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("code");
+//                String t = "Code";
+//            }
+//        });
+
+

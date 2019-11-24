@@ -20,10 +20,10 @@ public class BugReport {
 //
 //        //Array containing the data for the user according to the bug type
         ArrayList value = UserData(bug1);
-//
+////
 //        //setting the object with the array of details
         bug1.globalSet(value);
-
+//
         bug1.incrementBugID();
 
         //Printing the array
@@ -37,10 +37,10 @@ public class BugReport {
 
         //GUI
         JFrame frame = new App("Bug Report");
-//        frame.setContentPane(new App().mainPanel);
+//        frame.setContentPane(new App("Bug Report").mainPanel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.pack();
-        frame.setVisible(true);
+//        frame.setVisible(true);
 
     }
 
