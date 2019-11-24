@@ -145,6 +145,7 @@ public abstract class AbstractBug {
             }
             fileIn.close();
             System.out.println("File read successfully.");
+
         } catch (IOException e) {
             e.printStackTrace();
         }

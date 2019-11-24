@@ -39,6 +39,7 @@ public class BugReport {
         JFrame frame = new App("Bug Report");
         frame.setSize(700,350);
         frame.setLocation(300,100);
+
 //        frame.setContentPane(new App("Bug Report").mainPanel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.pack();

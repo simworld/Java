@@ -109,6 +109,8 @@ public class App extends JFrame {
                     try {
                         BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
                         textArea.read(input, "Reading file");
+                        JOptionPane.showMessageDialog(null,"File read");
+
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
