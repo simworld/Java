@@ -23,6 +23,28 @@ public class Database extends Main {
         }
 
 
+        void replaceBug(Integer bugID, AbstractBug bug){
+            for (int i = 0; i<bugs.size(); i++){
+                if (bugs.get(i).getBugID() == bugID) {
+                    bugs.remove(i);
+                    bugs.add(bug);
+                }else {
+                    i++;
+                }
+            }
+        }
+
+        void deleteBug(Integer bugID){
+            for (int i = 0; i<bugs.size(); i++){
+                if (bugs.get(i).getBugID() == bugID) {
+                    bugs.remove(i);
+                }else {
+                    i++;
+                }
+            }
+        }
+
+
 
 
 //        private Map <Integer, AbstractBug> bugs;
