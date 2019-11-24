@@ -74,10 +74,10 @@ class UserInput {
 
     private static int menuSelection(){
         System.out.println("What you want to do.\n" +
-                "1. Create a bug." +
-                "2. Search for a bug." +
-                "3. Modify a bug." +
-                "4. Delete a bug");
+                "1. Create" +
+                "2. Search" +
+                "3. Modify" +
+                "4. Delete");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextInt();
     }
