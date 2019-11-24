@@ -24,6 +24,8 @@ public class Main {
         System.out.println(bug1.toString());
         System.out.println(bug2.toString());
 
+        database.deleteBug(2);
+
         System.out.println(database.searchBug(1).toString());
 
     }

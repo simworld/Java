@@ -1,16 +1,17 @@
 package org.leonardi.bugreport;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Database {
 
         private ArrayList<AbstractBug> bugs = new ArrayList<>();
 
-        void addBug(AbstractBug bug){
+        public void addBug(AbstractBug bug){
             bugs.add(bug);
         }
 
-        AbstractBug searchBug(Integer bugID){
+        public AbstractBug searchBug(Integer bugID){
 
             for (int i = 0; i<bugs.size(); i++){
                 if (bugs.get(i).getBugID() == bugID) {
@@ -23,7 +24,7 @@ class Database {
         }
 
         //this is used when modifying the entries of a bug
-        void replaceBug(Integer bugID, AbstractBug bug){
+        public void replaceBug(Integer bugID, AbstractBug bug){
             for (int i = 0; i<bugs.size(); i++){
                 if (bugs.get(i).getBugID() == bugID) {
                     bugs.remove(i);
@@ -34,7 +35,7 @@ class Database {
             }
         }
 
-        void deleteBug(Integer bugID){
+        public void deleteBug(Integer bugID){
             for (int i = 0; i<bugs.size(); i++){
                 if (bugs.get(i).getBugID() == bugID) {
                     bugs.remove(i);
@@ -43,6 +44,16 @@ class Database {
                 }
             }
         }
+
+        public static int askForABug(){
+            System.out.println("Enter a bug number.");
+            Scanner userInput = new Scanner(System.in);
+            return userInput.nextInt();
+        }
+
+
+
+
 
 
 

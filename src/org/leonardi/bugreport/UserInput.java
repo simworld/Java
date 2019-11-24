@@ -72,4 +72,28 @@ class UserInput {
         return bug;
     }
 
+    private static int menuSelection(){
+        System.out.println("What you want to do.\n" +
+                "1. Create a bug." +
+                "2. Search for a bug." +
+                "3. Modify a bug." +
+                "4. Delete a bug");
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextInt();
+    }
+
+    private void doSomething(int value){
+
+        switch (value){
+            case 1:
+                createBugFromUserInput();
+            case 2:
+                Database database = new Database();
+                database.searchBug(Database.askForABug());
+            case 3:
+
+        }
+
+    }
+
 }
