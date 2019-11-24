@@ -23,6 +23,8 @@ public class Database extends MainTest{
         }
 
 
+
+
 //        private Map <Integer, AbstractBug> bugs;
 //
 //        public void addBug(Integer bugID, AbstractBug bug){
