@@ -122,6 +122,7 @@ public abstract class AbstractBug {
 //            while (line != null) {
 //                System.out.println(line);
 //                line = fileIn.readLine();
+
 //            }
 //            fileIn.close();
 //            System.out.println("File read successfully.");
@@ -130,12 +131,21 @@ public abstract class AbstractBug {
 //        }
 //    }
 
-
     private Date getCurrentDate() {
         return Calendar.getInstance().getTime();
     }
 
+
     // setters and getters
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Integer getPriority() {
         return priority;
     }
