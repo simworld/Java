@@ -8,9 +8,7 @@ public class Main {
         int bugID = 0;
 
         Database database = new Database();
-//        UserInput userInput = new UserInput();
 
-//        userInput.menu();
 
         AbstractBug bug1 = UserInput.createBugFromUserInput();
         bugID++;
