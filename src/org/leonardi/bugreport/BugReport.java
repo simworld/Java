@@ -18,8 +18,9 @@ public class BugReport {
         AbstractBug bug1 = factory.createBug(type);
 //
 //        //Array containing the data for the user according to the bug type
-        ArrayList value = UserData(bug1);
+//        ArrayList value = UserData(bug1);
 
+        bug1.newUserData();
         System.out.println(bug1.toString());
 
 

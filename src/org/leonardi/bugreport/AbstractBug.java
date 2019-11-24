@@ -45,7 +45,32 @@ public abstract class AbstractBug {
                 + description + "\nStep to reproduce: " + stepToReproduce + "\nActual: " + actual + "\nExpected: " + expected;
     }
 
+    public void newUserData(){
+        System.out.println("\"1. Select the priority 1/2/3/4: ");
+        Scanner priority = new Scanner(System.in);
+        setPriority(priority.nextInt());
 
+        System.out.println("2. Enter the summary: ");
+        Scanner summary = new Scanner(System.in);
+        setSummary(summary.nextLine());
+
+        System.out.println("3. Enter the description: ");
+        Scanner description = new Scanner(System.in);
+        setDescription(description.nextLine());
+
+        System.out.println("4. How do you reproduce the issue?");
+        Scanner stepToReproduce = new Scanner(System.in);
+        setStepToReproduce(stepToReproduce.nextLine());
+
+        System.out.println("5. Enter the actual result: ");
+        Scanner actual = new Scanner(System.in);
+        setActual(actual.nextLine());
+
+        System.out.println("6. Enter the Expected result: ");
+        Scanner expected = new Scanner(System.in);
+        setExpected(expected.nextLine());
+
+    }
 
 
 //    public void createFile(ArrayList bug, AbstractBug o) {

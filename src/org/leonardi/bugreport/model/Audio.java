@@ -3,6 +3,7 @@ package org.leonardi.bugreport.model;
 import org.leonardi.bugreport.AbstractBug;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Audio extends AbstractBug {
 
@@ -22,6 +23,19 @@ public class Audio extends AbstractBug {
     @Override
     public String toString() {
         return super.toString() + "\nString ID: " + stringID + "\nRerecording: " + rerecording;
+
+    }
+
+    @Override
+    public void newUserData() {
+        super.newUserData();
+        System.out.println("7. Enter the stringID: ");
+        Scanner stringID = new Scanner(System.in);
+        setStringID(stringID.nextLine());
+
+        System.out.println("8. Do you need rerecording? Yes / no ");
+        Scanner rerecording = new Scanner(System.in);
+        setRerecording(rerecording.nextLine());
 
     }
 

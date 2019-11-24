@@ -23,6 +23,12 @@ public class TemplateFactory {
         return userInput.nextLine();
     }
 
+    static void newUserData(){
+        System.out.println("\"1. Select the priority 1/2/3/4: ");
+        Scanner userInput = new Scanner(System.in);
+
+    }
+
     static ArrayList UserData(AbstractBug obj) {
 
         int range = 6;
