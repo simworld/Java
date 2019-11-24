@@ -72,30 +72,44 @@ class UserInput {
         return bug;
     }
 
-    private static int menuSelection(){
+    private static int selection(){
         System.out.println("What you want to do.\n" +
-                "1. Create" +
-                "2. Search" +
-                "3. Modify" +
-                "4. Delete");
+                "1. Create\n" +
+                "2. Search\n" +
+                "3. Modify\n" +
+                "4. Delete\n" +
+                "5. Exit");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextInt();
     }
 
-    private void doSomething(int value){
+    public void menu(){
 
-        switch (value){
+        switch (selection()){
             case 1:
-                createBugFromUserInput();
+                Database database3 = new Database();
+                AbstractBug bug1 = UserInput.createBugFromUserInput();
+                database3.addBug(bug1);
+
             case 2:
                 Database database = new Database();
-                database.searchBug(askForABug());
+                if (database.checkIfNull()){
+                    System.out.println("Database is empty");
+                    menu();
+                }else
+                    database.searchBug(askForABug());
             case 3:
                 System.out.println("this is not done yet");
+                menu();
             case 4:
                 Database database2 = new Database();
-                database2.deleteBug(askForABug());
-
+                if (database2.checkIfNull()){
+                    System.out.println("Database is empty");
+                    menu();
+                }else
+                    database2.deleteBug(askForABug());
+            case 5:
+                System.exit(0);
         }
 
     }

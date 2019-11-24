@@ -39,6 +39,10 @@ class Database {
             }
         }
 
+        public boolean checkIfNull(){
+            return bugs.isEmpty();
+        }
+
 
 
 
