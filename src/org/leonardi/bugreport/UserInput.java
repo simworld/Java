@@ -6,7 +6,7 @@ import org.leonardi.bugreport.model.Cosmetic;
 
 import java.util.Scanner;
 
-public class UserInput extends Main {
+class UserInput {
 
 
     private static String selectBugType() {

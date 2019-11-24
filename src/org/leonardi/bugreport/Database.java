@@ -2,7 +2,7 @@ package org.leonardi.bugreport;
 
 import java.util.ArrayList;
 
-public class Database extends Main {
+class Database {
 
         private ArrayList<AbstractBug> bugs = new ArrayList<>();
 
@@ -22,7 +22,7 @@ public class Database extends Main {
             return null;
         }
 
-
+        //this is used when modifying the entries of a bug
         void replaceBug(Integer bugID, AbstractBug bug){
             for (int i = 0; i<bugs.size(); i++){
                 if (bugs.get(i).getBugID() == bugID) {
