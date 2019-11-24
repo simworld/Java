@@ -36,6 +36,7 @@ public abstract class AbstractBug {
 
     public AbstractBug() {
        priority = 1;
+       id = 0;
        date = getCurrentDate();
     }
 
