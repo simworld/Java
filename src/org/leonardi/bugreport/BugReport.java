@@ -13,18 +13,18 @@ public class BugReport {
         TemplateFactory factory = new TemplateFactory();
 
         //user input asking for the type
-        String type = selectBugType();
-//
-//        //creating the specific object
-        AbstractBug bug1 = factory.createBug(type);
-//
-//        //Array containing the data for the user according to the bug type
-        ArrayList value = UserData(bug1);
+//        String type = selectBugType();
 ////
-//        //setting the object with the array of details
-        bug1.globalSet(value);
-//
-        bug1.incrementBugID();
+////        //creating the specific object
+//        AbstractBug bug1 = factory.createBug(type);
+////
+////        //Array containing the data for the user according to the bug type
+//        ArrayList value = UserData(bug1);
+//////
+////        //setting the object with the array of details
+//        bug1.globalSet(value);
+////
+//        bug1.incrementBugID();
 
         //Printing the array
         //bug1.print(bug1.globalGet(), bug1);
@@ -37,6 +37,8 @@ public class BugReport {
 
         //GUI
         JFrame frame = new App("Bug Report");
+        frame.setSize(700,350);
+        frame.setLocation(300,100);
 //        frame.setContentPane(new App("Bug Report").mainPanel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.pack();
