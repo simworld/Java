@@ -35,9 +35,7 @@ public abstract class AbstractBug {
     }
 
     public AbstractBug() {
-       priority = 1;
-       id = 0;
-       date = getCurrentDate();
+        date = getCurrentDate();
     }
 
 
@@ -46,91 +44,6 @@ public abstract class AbstractBug {
                 + description + "\nStep to reproduce: " + stepToReproduce + "\nActual: " + actual + "\nExpected: " + expected;
     }
 
-    public void newUserData(){
-        System.out.println("\"1. Select the priority 1/2/3/4: ");
-        Scanner priority = new Scanner(System.in);
-        setPriority(priority.nextInt());
-
-        System.out.println("2. Enter the summary: ");
-        Scanner summary = new Scanner(System.in);
-        setSummary(summary.nextLine());
-
-        System.out.println("3. Enter the description: ");
-        Scanner description = new Scanner(System.in);
-        setDescription(description.nextLine());
-
-        System.out.println("4. How do you reproduce the issue?");
-        Scanner stepToReproduce = new Scanner(System.in);
-        setStepToReproduce(stepToReproduce.nextLine());
-
-        System.out.println("5. Enter the actual result: ");
-        Scanner actual = new Scanner(System.in);
-        setActual(actual.nextLine());
-
-        System.out.println("6. Enter the Expected result: ");
-        Scanner expected = new Scanner(System.in);
-        setExpected(expected.nextLine());
-
-    }
-
-
-//    public void createFile(ArrayList bug, AbstractBug o) {
-//        String fileName = "bugID_" + bugID + ".txt";
-//        FileWriter fileOut;
-//        try {
-//            fileOut = new FileWriter(fileName);
-//            for (int i =0; i<bug.size();i++) {
-//                if (o instanceof Cosmetic){ fields.add("String ID: ");
-//                }
-//                else if (o instanceof Audio){
-//                    fields.add("String ID: ");
-//                    fields.add("Recording: ");
-//                }
-//
-//                String str = bug.get(i).toString();
-//                String f = fields.get(i);
-//                fileOut.write(f + str + "\n");
-//            }
-//            fileOut.close();
-//            System.out.println("file saved.");
-//        } catch (IOException e) {
-//            System.out.println("IO Error: " + e.getMessage());
-//        }
-//    }
-
-//    void createFile(ArrayList bug) {
-//        String fileName = "bugID_" + bugID + ".txt";
-//        FileWriter fileOut;
-//        try {
-//            fileOut = new FileWriter(fileName);
-//            for (Object o : bug) {
-//                String str = o.toString();
-//                fileOut.write(str + "\n");
-//            }
-//            fileOut.close();
-//            System.out.println("file saved.");
-//        } catch (IOException e) {
-//            System.out.println("IO Error: " + e.getMessage());
-//        }
-//    }
-
-//    void readFile() {
-//        BufferedReader fileIn;
-//        String fileName = "bugID_" + bugID + ".txt";
-//        try {
-//            fileIn = new BufferedReader(new FileReader(fileName));
-//            String line = fileIn.readLine();
-//            while (line != null) {
-//                System.out.println(line);
-//                line = fileIn.readLine();
-
-//            }
-//            fileIn.close();
-//            System.out.println("File read successfully.");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     private Date getCurrentDate() {
         return Calendar.getInstance().getTime();

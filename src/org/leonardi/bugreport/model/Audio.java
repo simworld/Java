@@ -26,19 +26,6 @@ public class Audio extends AbstractBug {
 
     }
 
-    @Override
-    public void newUserData() {
-        super.newUserData();
-        System.out.println("7. Enter the stringID: ");
-        Scanner stringID = new Scanner(System.in);
-        setStringID(stringID.nextLine());
-
-        System.out.println("8. Do you need rerecording? Yes / no ");
-        Scanner rerecording = new Scanner(System.in);
-        setRerecording(rerecording.nextLine());
-
-    }
-
     private String getStringID() {
         return stringID;
     }

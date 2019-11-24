@@ -22,7 +22,6 @@ public class BugReport {
 
 
 
-        bug1.newUserData();
         System.out.println(bug1.toString());
 
 

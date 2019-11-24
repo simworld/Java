@@ -23,14 +23,6 @@ public class Cosmetic extends AbstractBug {
         return super.toString() + "\nString ID: " + stringID;
     }
 
-    @Override
-    public void newUserData() {
-        super.newUserData();
-        System.out.println("7. Enter the stringID: ");
-        Scanner stringID = new Scanner(System.in);
-        setStringID(stringID.nextLine());
-    }
-
     public String getStringID() {
         return stringID;
     }

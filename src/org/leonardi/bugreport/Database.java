@@ -2,7 +2,7 @@ package org.leonardi.bugreport;
 
 import java.util.ArrayList;
 
-public class Database extends MainTest{
+public class Database extends Main {
 
         private ArrayList<AbstractBug> bugs = new ArrayList<>();
 

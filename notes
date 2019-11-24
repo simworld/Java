@@ -1,14 +1,60 @@
-    Main idea
-    - to search for the bugs we need to have a constant (in this case bug ID) to recall the details we want.
-    - we can use arrays to manage all the bug fields
-    - a single file per bug
-    - the name of the file needs to reflect the BugID for the purpose of searching bugs
+//    public void createFile(ArrayList bug, AbstractBug o) {
+//        String fileName = "bugID_" + bugID + ".txt";
+//        FileWriter fileOut;
+//        try {
+//            fileOut = new FileWriter(fileName);
+//            for (int i =0; i<bug.size();i++) {
+//                if (o instanceof Cosmetic){ fields.add("String ID: ");
+//                }
+//                else if (o instanceof Audio){
+//                    fields.add("String ID: ");
+//                    fields.add("Recording: ");
+//                }
+//
+//                String str = bug.get(i).toString();
+//                String f = fields.get(i);
+//                fileOut.write(f + str + "\n");
+//            }
+//            fileOut.close();
+//            System.out.println("file saved.");
+//        } catch (IOException e) {
+//            System.out.println("IO Error: " + e.getMessage());
+//        }
+//    }
 
-    -
+//    void createFile(ArrayList bug) {
+//        String fileName = "bugID_" + bugID + ".txt";
+//        FileWriter fileOut;
+//        try {
+//            fileOut = new FileWriter(fileName);
+//            for (Object o : bug) {
+//                String str = o.toString();
+//                fileOut.write(str + "\n");
+//            }
+//            fileOut.close();
+//            System.out.println("file saved.");
+//        } catch (IOException e) {
+//            System.out.println("IO Error: " + e.getMessage());
+//        }
+//    }
 
-    Other notes
-    - UI mut be last thing
+//    void readFile() {
+//        BufferedReader fileIn;
+//        String fileName = "bugID_" + bugID + ".txt";
+//        try {
+//            fileIn = new BufferedReader(new FileReader(fileName));
+//            String line = fileIn.readLine();
+//            while (line != null) {
+//                System.out.println(line);
+//                line = fileIn.readLine();
 
+//            }
+//            fileIn.close();
+//            System.out.println("File read successfully.");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 
