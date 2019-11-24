@@ -90,6 +90,7 @@ class UserInput {
                 Database database3 = new Database();
                 AbstractBug bug1 = UserInput.createBugFromUserInput();
                 database3.addBug(bug1);
+                menu();
 
             case 2:
                 Database database = new Database();
@@ -113,7 +114,7 @@ class UserInput {
         }
 
     }
-    private static int askForABug(){
+    public static int askForABug(){
         System.out.println("Enter a bug number.");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextInt();
