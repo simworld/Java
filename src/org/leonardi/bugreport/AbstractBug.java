@@ -46,6 +46,8 @@ public abstract class AbstractBug {
     }
 
 
+
+
 //    public void createFile(ArrayList bug, AbstractBug o) {
 //        String fileName = "bugID_" + bugID + ".txt";
 //        FileWriter fileOut;
