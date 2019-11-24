@@ -27,7 +27,7 @@ class UserInput {
         }
     }
 
-    static AbstractBug createBugFromUserInput(){
+    public static AbstractBug createBugFromUserInput(){
 
         AbstractBug bug = createBug(selectBugType());
 
@@ -89,11 +89,20 @@ class UserInput {
                 createBugFromUserInput();
             case 2:
                 Database database = new Database();
-                database.searchBug(Database.askForABug());
+                database.searchBug(askForABug());
             case 3:
+                System.out.println("this is not done yet");
+            case 4:
+                Database database2 = new Database();
+                database2.deleteBug(askForABug());
 
         }
 
+    }
+    private static int askForABug(){
+        System.out.println("Enter a bug number.");
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextInt();
     }
 
 }

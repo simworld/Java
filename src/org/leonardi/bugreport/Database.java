@@ -16,8 +16,6 @@ class Database {
             for (int i = 0; i<bugs.size(); i++){
                 if (bugs.get(i).getBugID() == bugID) {
                     return bugs.get(i);
-                }else {
-                    i++;
                 }
             }
             return null;
@@ -29,27 +27,19 @@ class Database {
                 if (bugs.get(i).getBugID() == bugID) {
                     bugs.remove(i);
                     bugs.add(bug);
-                }else {
-                    i++;
                 }
-            }
+                }
         }
 
         public void deleteBug(Integer bugID){
             for (int i = 0; i<bugs.size(); i++){
                 if (bugs.get(i).getBugID() == bugID) {
                     bugs.remove(i);
-                }else {
-                    i++;
                 }
             }
         }
 
-        public static int askForABug(){
-            System.out.println("Enter a bug number.");
-            Scanner userInput = new Scanner(System.in);
-            return userInput.nextInt();
-        }
+
 
 
 
