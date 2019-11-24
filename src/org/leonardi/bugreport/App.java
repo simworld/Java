@@ -60,9 +60,9 @@ public class App extends JFrame {
                     ArrayList value = TemplateFactory.UserData(bug1);
 
                     //setting the object with the array of details
-                    bug1.globalSet(value);
-
-                    bug1.incrementBugID();
+//                    bug1.globalSet(value);
+//
+//                    bug1.incrementBugID();
 
 
                 }

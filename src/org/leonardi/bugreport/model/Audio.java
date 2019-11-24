@@ -9,21 +9,19 @@ public class Audio extends AbstractBug {
     private String stringID;
     private String rerecording;
 
-
-    public ArrayList globalGet() {
-
-        super.globalGet();
-        bugArray.add(getStringID());
-        bugArray.add(getRerecording());
-
-        return bugArray;
+    public Audio() {
+        super();
     }
 
-    public void globalSet(ArrayList<String> details) {
+    public Audio(Integer priority, String summary, String description, String stepToReproduce, String actual, String expected, String stringID, String rerecording) {
+        super(priority, summary, description, stepToReproduce, actual, expected);
+        this.stringID = stringID;
+        this.rerecording = rerecording;
+    }
 
-        super.globalSet(details);
-        this.stringID = details.get(6);
-        this.rerecording = details.get(7);
+    @Override
+    public String toString() {
+        return super.toString() + "\nString ID: " + stringID + "\nRerecording: " + rerecording;
 
     }
 

@@ -9,23 +9,21 @@ public class Cosmetic extends AbstractBug {
 
     private String stringID;
 
-
-    public ArrayList globalGet() {
-
-        super.globalGet();
-        bugArray.add(getStringID());
-
-        return bugArray;
+    public Cosmetic(Integer priority, String summary, String description, String stepToReproduce, String actual, String expected, String stringID) {
+        super(priority, summary, description, stepToReproduce, actual, expected);
+        this.stringID = stringID;
     }
 
-    public void globalSet(ArrayList<String> details) {
-
-        super.globalSet(details);
-        this.stringID = details.get(6);
-
+    public Cosmetic() {
+        super();
     }
 
-    private String getStringID() {
+    @Override
+    public String toString() {
+        return super.toString() + "\nString ID: " + stringID;
+    }
+
+    public String getStringID() {
         return stringID;
     }
 

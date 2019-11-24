@@ -23,7 +23,7 @@ public class TemplateFactory {
         return userInput.nextLine();
     }
 
-    static ArrayList UserData(Object obj) {
+    static ArrayList UserData(AbstractBug obj) {
 
         int range = 6;
 
