@@ -4,6 +4,7 @@ import org.leonardi.bugreport.model.Audio;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class UserInput {
@@ -30,11 +31,15 @@ class UserInput {
     public static AbstractBug createBugFromUserInput(){
 
         AbstractBug bug = createBug(selectBugType());
-
-        System.out.println("1. Select the priority 1/2/3/4: ");
-        Scanner priority = new Scanner(System.in);
-        bug.setPriority(priority.nextInt());
-
+        try {
+            System.out.println("1. Select the priority 1/2/3/4: ");
+            Scanner priority = new Scanner(System.in);
+            bug.setPriority(priority.nextInt());
+        }
+        catch (InputMismatchException e){
+            System.out.println("Invalid argument. Exit program ...");
+            System.exit(1);
+        }
         System.out.println("2. Enter the summary: ");
         Scanner summary = new Scanner(System.in);
         bug.setSummary(summary.nextLine());

@@ -47,7 +47,7 @@ class Database {
         ObjectInputStream fileIn;
 
         try {
-            fileIn = new ObjectInputStream(new FileInputStream("bugs.dat"));
+            fileIn = new ObjectInputStream(new FileInputStream("bugs.txt"));
             System.out.println("Opened file successfully.");
             for (AbstractBug bug : bugs) {
                 System.out.println(bug.toString()); // a method describing the object
@@ -61,15 +61,16 @@ class Database {
     }
 
     public void writeOnFile(){
-        String fileName = "bugs.dat";
+        String fileName = "bugs.txt";
         ObjectOutputStream fileOut;
         try{
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
             for (AbstractBug bug : bugs) {
-                fileOut.writeObject(bug);
+                fileOut.writeObject(bug.toString());
             }
             fileOut.close();
             System.out.println("Bugs contents saved.");
+
         }
         catch (IOException e) {
             System.out.println("IO Error : " + e.getMessage());

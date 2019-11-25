@@ -1,34 +1,48 @@
 package org.leonardi.bugreport;
 
-public class Main {
+import javax.swing.*;
+
+
+public class Main extends JFrame{
 
 
     public static void main(String[] args) {
 
-        int bugID = 0;
+//        int bugID = 0;
+//
+//        Database database = new Database();
+////        UserInput userInput = new UserInput();
+//
+////        userInput.menu();
+//
+//        AbstractBug bug1 = UserInput.createBugFromUserInput();
+////        bugID++;
+////        bug1.setId(bugID);
+////        database.addBug(bug1);
+//
+////        AbstractBug bug2 = UserInput.createBugFromUserInput();
+////        bugID++;
+////        bug2.setId(bugID);
+////        database.addBug(bug2);
+//
+////        System.out.println(bug1.toString());
+////        System.out.println(bug2.toString());
+//
+////        database.deleteBug(2);
+//
+////        System.out.println(database.searchBug(UserInput.askForABug()).toString());
+//
+//        database.writeOnFile();
+//        database.readOnFile();
 
-        Database database = new Database();
+        //GUI
+        JFrame frame = new GUI();
+        frame.setContentPane(new GUI().mainPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(500,500);
 
-
-        AbstractBug bug1 = UserInput.createBugFromUserInput();
-        bugID++;
-        bug1.setId(bugID);
-        database.addBug(bug1);
-
-//        AbstractBug bug2 = UserInput.createBugFromUserInput();
-//        bugID++;
-//        bug2.setId(bugID);
-//        database.addBug(bug2);
-
-        System.out.println(bug1.toString());
-//        System.out.println(bug2.toString());
-
-//        database.deleteBug(2);
-
-//        System.out.println(database.searchBug(UserInput.askForABug()).toString());
-
-        database.writeOnFile();
-        database.readOnFile();
 
     }
 }

@@ -1,8 +1,0 @@
-BugID: 3
-Date: 2019-31-24 01:31:56
-Priority: sdf
-Summary: asdf
-Description: adf
-Step to reproduce: sdf
-Actual: asdf
-Expected: asdf
