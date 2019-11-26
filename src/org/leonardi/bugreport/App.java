@@ -14,7 +14,7 @@
 //import java.util.Enumeration;
 //
 //public class App extends JFrame {
-//    public JPanel mainPanel;
+//    public JPanel panel1;
 //    public JButton newBugButton;
 //    private JTextField bugField;
 //    private JButton provaButton;
@@ -32,7 +32,7 @@
 ////        super(title);
 ////
 ////        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-////        this.setContentPane(mainPanel);
+////        this.setContentPane(panel1);
 ////        this.setVisible(true);
 ////        this.pack();
 //

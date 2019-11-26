@@ -18,6 +18,7 @@ public class GUI extends JFrame {
 
     public GUI() {
 
+// button group for radio buttons
         ButtonGroup group = new ButtonGroup();
         group.add(cosmeticRadioButton);
         group.add(audioRadioButton);
@@ -33,7 +34,7 @@ public class GUI extends JFrame {
                     try {
                         BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
                         textArea.read(input, "Reading file");
-                        JOptionPane.showMessageDialog(null,"File read");
+                        JOptionPane.showMessageDialog(null,"Bug Successfully Opened");
 
                     } catch (Exception ex) {
                         ex.printStackTrace();
@@ -51,6 +52,7 @@ public class GUI extends JFrame {
         newBug.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+// Radio buttons
                 String select = "";
 
                 if (cosmeticRadioButton.isSelected()) {
@@ -63,16 +65,17 @@ public class GUI extends JFrame {
                 if (codeRadioButton.isSelected()) {
                     select = codeRadioButton.getText();
                 }
+
                 int bugID = 0;
 
                 Database database = new Database();
-
 
                 AbstractBug bug1 = UserInput.createBugFromUserInput();
                 bugID++;
                 bug1.setId(bugID);
                 database.addBug(bug1);
                 database.writeOnFile();
+                JOptionPane.showMessageDialog(null,"Bug Created");
 
 
             }
@@ -82,4 +85,7 @@ public class GUI extends JFrame {
 
         });
     }
+
+
+
 }
