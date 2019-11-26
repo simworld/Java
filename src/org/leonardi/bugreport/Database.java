@@ -3,14 +3,18 @@ package org.leonardi.bugreport;
 import java.io.*;
 import java.util.ArrayList;
 
-class Database {
+/* this class collect, save, search, write and read all objects */
 
+class Database {
+    /* this array is used to collect all the objects */
     private ArrayList<AbstractBug> bugs = new ArrayList<>();
 
+    /* method to add bugs into the array */
     public void addBug(AbstractBug bug) {
         bugs.add(bug);
     }
 
+    /* method to search through the array according to the ID selected*/
     public AbstractBug searchBug(Integer bugID) {
 
         for (int i = 0; i < bugs.size(); i++) {
@@ -21,7 +25,7 @@ class Database {
         return null;
     }
 
-    //this is used when modifying the entries of a bug
+    //this is used when modifying the entries of a bug - not implemented yet
     public void replaceBug(Integer bugID, AbstractBug bug) {
         for (int i = 0; i < bugs.size(); i++) {
             if (bugs.get(i).getBugID() == bugID) {
@@ -31,6 +35,7 @@ class Database {
         }
     }
 
+    /* this is used to delete an entry at the time from the array */
     public void deleteBug(Integer bugID) {
         for (int i = 0; i < bugs.size(); i++) {
             if (bugs.get(i).getBugID() == bugID) {
@@ -39,10 +44,12 @@ class Database {
         }
     }
 
+    /* checks if the database is empty */
     public boolean checkIfNull() {
         return bugs.isEmpty();
     }
 
+    /* reads files saved locally */
     public void readOnFile() {
         ObjectInputStream fileIn;
 
@@ -60,10 +67,11 @@ class Database {
         }
     }
 
-    public void writeOnFile(){
+    /* method to save the file */
+    public void writeOnFile() {
         String fileName = "bugs.txt";
         ObjectOutputStream fileOut;
-        try{
+        try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
             for (AbstractBug bug : bugs) {
                 fileOut.writeObject(bug.toString());
@@ -71,8 +79,7 @@ class Database {
             fileOut.close();
             System.out.println("Bugs contents saved.");
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("IO Error : " + e.getMessage());
         }
 

@@ -7,15 +7,18 @@ import org.leonardi.bugreport.model.Cosmetic;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/* Dedicated class for usr input and console output. */
+
 class UserInput {
 
-
+    /* select the bug type returning String */
     private static String selectBugType() {
         System.out.println("Select between the bug types: Cosmetic, Audio or Code. ");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextLine();
     }
 
+    /* using bugType to create the bug on request */
     private static AbstractBug createBug(String bugType) {
 
         switch (bugType) {
@@ -28,15 +31,15 @@ class UserInput {
         }
     }
 
-    public static AbstractBug createBugFromUserInput(){
+    /* creates the bug and asks users for the object details */
+    public static AbstractBug createBugFromUserInput() {
 
         AbstractBug bug = createBug(selectBugType());
         try {
             System.out.println("1. Select the priority 1/2/3/4: ");
             Scanner priority = new Scanner(System.in);
             bug.setPriority(priority.nextInt());
-        }
-        catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Invalid argument. Exit program ...");
             System.exit(1);
         }
@@ -60,11 +63,11 @@ class UserInput {
         Scanner expected = new Scanner(System.in);
         bug.setExpected(expected.nextLine());
 
-        if (bug instanceof Cosmetic){
+        if (bug instanceof Cosmetic) {
             System.out.println("6. Enter the string ID result: ");
             Scanner stringID = new Scanner(System.in);
-            ((Cosmetic) bug).setStringID (stringID.nextLine());
-        } else if (bug instanceof  Audio) {
+            ((Cosmetic) bug).setStringID(stringID.nextLine());
+        } else if (bug instanceof Audio) {
             System.out.println("6. Enter the string ID result: ");
             Scanner stringID = new Scanner(System.in);
             ((Audio) bug).setStringID(stringID.nextLine());
@@ -77,7 +80,8 @@ class UserInput {
         return bug;
     }
 
-    private static int selection(){
+    /* all the following method are intended to create a selectable menu in the console */
+    private static int selection() {
         System.out.println("What you want to do.\n" +
                 "1. Create\n" +
                 "2. Search\n" +
@@ -88,9 +92,9 @@ class UserInput {
         return userInput.nextInt();
     }
 
-    public void menu(){
+    public void menu() {
 
-        switch (selection()){
+        switch (selection()) {
             case 1:
                 Database database3 = new Database();
                 AbstractBug bug1 = UserInput.createBugFromUserInput();
@@ -99,27 +103,28 @@ class UserInput {
 
             case 2:
                 Database database = new Database();
-                if (database.checkIfNull()){
+                if (database.checkIfNull()) {
                     System.out.println("Database is empty");
                     menu();
-                }else
+                } else
                     database.searchBug(askForABug());
             case 3:
                 System.out.println("this is not done yet");
                 menu();
             case 4:
                 Database database2 = new Database();
-                if (database2.checkIfNull()){
+                if (database2.checkIfNull()) {
                     System.out.println("Database is empty");
                     menu();
-                }else
+                } else
                     database2.deleteBug(askForABug());
             case 5:
                 System.exit(0);
         }
 
     }
-    public static int askForABug(){
+
+    public static int askForABug() {
         System.out.println("Enter a bug number.");
         Scanner userInput = new Scanner(System.in);
         return userInput.nextInt();

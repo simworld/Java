@@ -1,16 +1,5 @@
 package org.leonardi.bugreport;
 
-import org.leonardi.bugreport.model.Audio;
-import org.leonardi.bugreport.model.Code;
-import org.leonardi.bugreport.model.Cosmetic;
-
-import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public abstract class AbstractBug {
