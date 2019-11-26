@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 class Database {
 
-    int id = 0;
+    private int id = 0;
 
     /* this array is used to collect all the objects */
     private ArrayList<AbstractBug> bugs = new ArrayList<>();
