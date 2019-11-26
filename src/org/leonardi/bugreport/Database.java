@@ -6,12 +6,17 @@ import java.util.ArrayList;
 /* this class collect, save, search, write and read all objects */
 
 class Database {
+
+    int id = 0;
+
     /* this array is used to collect all the objects */
     private ArrayList<AbstractBug> bugs = new ArrayList<>();
 
     /* method to add bugs into the array */
     public void addBug(AbstractBug bug) {
         bugs.add(bug);
+        id++;
+        bug.setId(id);
     }
 
     /* method to search through the array according to the ID selected*/
