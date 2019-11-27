@@ -1,4 +1,4 @@
-package org.leonardi.bugreport;
+package org.leonardi.bugreport.simone;
 
 import javax.swing.*;
 
@@ -13,4 +13,5 @@ public class cosmeticWindow extends JFrame{
     private JTextField textField4;
     private JTextField textField5;
     private JTextField textField6;
+
 }

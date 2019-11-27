@@ -1,4 +1,8 @@
-package org.leonardi.bugreport;
+package org.leonardi.bugreport.simone;
+
+import org.leonardi.bugreport.AbstractBug;
+import org.leonardi.bugreport.Database;
+import org.leonardi.bugreport.UserInput;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

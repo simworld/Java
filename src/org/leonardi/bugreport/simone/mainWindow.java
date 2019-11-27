@@ -1,4 +1,6 @@
-package org.leonardi.bugreport;
+package org.leonardi.bugreport.simone;
+
+import org.leonardi.bugreport.simone.createBug;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

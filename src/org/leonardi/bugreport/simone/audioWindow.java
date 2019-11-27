@@ -1,4 +1,4 @@
-package org.leonardi.bugreport;
+package org.leonardi.bugreport.simone;
 
 import javax.swing.*;
 

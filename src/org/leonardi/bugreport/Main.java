@@ -1,5 +1,7 @@
 package org.leonardi.bugreport;
 
+import org.leonardi.bugreport.GUI.FirstWindow;
+
 import javax.swing.*;
 
 
@@ -10,23 +12,23 @@ public class Main extends JFrame{
 
 //        int bugID = 0;
 //
-        Database database = new Database();
-////        UserInput userInput = new UserInput();
+//        Database database = new Database();
+//////        UserInput userInput = new UserInput();
+//////
+//////        userInput.menu();
 ////
-////        userInput.menu();
-//
-        AbstractBug bug1 = UserInput.createBugFromUserInput();
-//        bugID++;
-//        bug1.setId(bugID);
-        database.addBug(bug1);
-//
-        AbstractBug bug2 = UserInput.createBugFromUserInput();
-//        bugID++;
-//        bug2.setId(bugID);
-        database.addBug(bug2);
-//
-        System.out.println(bug1.toString());
-        System.out.println(bug2.toString());
+//        AbstractBug bug1 = UserInput.createBugFromUserInput();
+////        bugID++;
+////        bug1.setId(bugID);
+//        database.addBug(bug1);
+////
+//        AbstractBug bug2 = UserInput.createBugFromUserInput();
+////        bugID++;
+////        bug2.setId(bugID);
+//        database.addBug(bug2);
+////
+//        System.out.println(bug1.toString());
+//        System.out.println(bug2.toString());
 ////
 ////        database.deleteBug(2);
 ////
@@ -42,6 +44,8 @@ public class Main extends JFrame{
 //        frame.pack();
 //        frame.setVisible(true);
 //        frame.setSize(500,500);
+
+            JFrame frame = new FirstWindow();
 
 
     }

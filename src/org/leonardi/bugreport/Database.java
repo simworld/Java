@@ -22,9 +22,9 @@ class Database {
     /* method to search through the array according to the ID selected*/
     public AbstractBug searchBug(Integer bugID) {
 
-        for (int i = 0; i < bugs.size(); i++) {
-            if (bugs.get(i).getBugID() == bugID) {
-                return bugs.get(i);
+        for (AbstractBug bug : bugs) {
+            if (bug.getBugID() == bugID) {
+                return bug;
             }
         }
         return null;
@@ -72,7 +72,7 @@ class Database {
         }
     }
 
-    /* method to save the file */
+    /* method to save on file */
     public void writeOnFile() {
         String fileName = "bugs.txt";
         ObjectOutputStream fileOut;
