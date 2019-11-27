@@ -1,5 +1,17 @@
 package org.leonardi.bugreport.GUI;
 
+import javax.swing.*;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Ugoivy
+ */
 public class FirstWindow extends javax.swing.JFrame {
 
     /**
@@ -8,8 +20,6 @@ public class FirstWindow extends javax.swing.JFrame {
     public FirstWindow() {
         initComponents();
     }
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,6 +38,7 @@ public class FirstWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToggleButton1.setText("Ceate");
+        jToggleButton1.addActionListener(evt -> jToggleButton1ActionPerformed(evt));
 
         jToggleButton2.setText("Search");
 
@@ -64,6 +75,10 @@ public class FirstWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        new SelectBug().setVisible(true);
+    }
 
     /**
      * @param args the command line arguments
