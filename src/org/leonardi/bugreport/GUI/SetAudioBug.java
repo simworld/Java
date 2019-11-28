@@ -1,6 +1,7 @@
 package org.leonardi.bugreport.GUI;
 import org.leonardi.bugreport.model.Audio;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class SetAudioBug extends javax.swing.JFrame {
@@ -10,8 +11,11 @@ public class SetAudioBug extends javax.swing.JFrame {
      */
     public SetAudioBug() {
         initComponents();
-    }
 
+        ButtonGroup group = new ButtonGroup();
+        group.add(yesRadioButton);
+        group.add(noRadioButton);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -245,13 +249,20 @@ public class SetAudioBug extends javax.swing.JFrame {
         //        if(jComboBox3.getSelectedItem()){
 //
 //        }
+        String select = "";
+        if(yesRadioButton.isSelected()){
+            select = yesRadioButton.getText();
+        }
+        else if (noRadioButton.isSelected()){
+            select = noRadioButton.getText();
+        }
         bug.setStringID(stringIDField.getText());
         bug.setSummary(summaryText.getText());
         bug.setDescription(descriptionArea.getText());
         bug.setStepToReproduce(stepsArea.getText());
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
-        bug.setRerecording(yesRadioButton.getText());
+        bug.setRerecording(select);
         System.out.println(bug.toString());
 
     }
@@ -316,6 +327,8 @@ public class SetAudioBug extends javax.swing.JFrame {
     private javax.swing.JLabel summaryLabel;
     private javax.swing.JTextField summaryText;
     private javax.swing.JRadioButton yesRadioButton;
+
+
     // End of variables declaration
 }
 
