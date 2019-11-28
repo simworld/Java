@@ -37,7 +37,7 @@ public class FirstWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setText("Ceate");
+        jToggleButton1.setText("Create");
         jToggleButton1.addActionListener(evt -> jToggleButton1ActionPerformed(evt));
 
         jToggleButton2.setText("Search");

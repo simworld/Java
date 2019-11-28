@@ -38,14 +38,14 @@ public class Main extends JFrame{
 //        database.writeOnFile();
 //        database.readOnFile();
         //GUI
-//        JFrame frame = new mainWindow();
+//        JFrame frame = new fir();
 //        frame.setContentPane(new mainWindow().mainPanel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.pack();
 //        frame.setVisible(true);
 //        frame.setSize(500,500);
-
-            JFrame frame = new FirstWindow();
+//
+//            JFrame frame = new FirstWindow();
 
 
     }

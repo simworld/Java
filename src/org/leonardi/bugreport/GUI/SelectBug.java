@@ -1,5 +1,11 @@
 package org.leonardi.bugreport.GUI;
 
+import org.leonardi.bugreport.cosmeticWindow;
+import org.leonardi.bugreport.model.Cosmetic;
+
+import javax.swing.*;
+import java.awt.*;
+
 public class SelectBug extends javax.swing.JFrame {
 
     /**
@@ -30,7 +36,11 @@ public class SelectBug extends javax.swing.JFrame {
         jLabel1.setText("Select bug type:");
 
         jButton1.setText("Create");
-
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,9 +80,31 @@ public class SelectBug extends javax.swing.JFrame {
         pack();
     }// </editor-fold>
 
+
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+
+        System.exit(1);
     }
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+
+        String combo = String.valueOf(jComboBox1.getSelectedItem());
+        System.out.println(combo);
+        if(combo == "Cosmetic"){
+           // new SetCosmeticBug().setVisible(true);
+
+        }
+        else if (combo == "Audio"){
+            new SetAudioBug().setVisible(true);
+        }
+        else if (combo == "Code"){
+           // new SetCodeBug().setVisible(true);
+        }
+    }
+
 
     /**
      * @param args the command line arguments
