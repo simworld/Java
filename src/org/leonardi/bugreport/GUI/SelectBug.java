@@ -94,14 +94,14 @@ public class SelectBug extends javax.swing.JFrame {
         String combo = String.valueOf(jComboBox1.getSelectedItem());
         System.out.println(combo);
         if(combo == "Cosmetic"){
-           // new SetCosmeticBug().setVisible(true);
+            new SetCosmeticBug().setVisible(true);
 
         }
         else if (combo == "Audio"){
             new SetAudioBug().setVisible(true);
         }
         else if (combo == "Code"){
-           // new SetCodeBug().setVisible(true);
+            new SetCodeBug().setVisible(true);
         }
     }
 
