@@ -6,6 +6,9 @@ package org.leonardi.bugreport.GUI;
  * and open the template in the editor.
  */
 
+import org.leonardi.bugreport.model.Code;
+import org.leonardi.bugreport.model.Cosmetic;
+
 /**
  *
  * @author sim
@@ -49,6 +52,8 @@ public class SetCodeBug extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Code codeBug = new Code();
+
         priorityLabel.setText("Priority");
 
         priorityCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
@@ -86,7 +91,7 @@ public class SetCodeBug extends javax.swing.JFrame {
         createButton.setText("Create");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt);
+                createButtonActionPerformed(evt, codeBug );
             }
         });
 
@@ -188,8 +193,34 @@ public class SetCodeBug extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Code bug) {
         // TODO add your handling code here:
+        String select = "";
+        int x = 0;
+
+        String combo = String.valueOf(priorityCombo.getSelectedItem());
+
+        if (combo == "1"){
+            x = 1;
+        }
+        else if (combo == "2"){
+            x = 2;
+        }
+        else if (combo == "3"){
+            x = 3;
+        }
+        else if (combo == "4"){
+            x = 4;
+        }
+
+//        bug.setPriority(priorityComboActionPerformed(evt));
+        bug.setPriority(x);
+        bug.setSummary(summaryText.getText());
+        bug.setDescription(descriptionArea.getText());
+        bug.setStepToReproduce(stepsArea.getText());
+        bug.setActual(actualArea.getText());
+        bug.setExpected(expectedArea.getText());
+        System.out.println(bug.toString());
 
     }
 

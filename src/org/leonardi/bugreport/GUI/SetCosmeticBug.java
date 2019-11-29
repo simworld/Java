@@ -6,6 +6,10 @@ package org.leonardi.bugreport.GUI;
  * and open the template in the editor.
  */
 
+import org.leonardi.bugreport.model.Cosmetic;
+
+import javax.swing.*;
+
 /**
  *
  * @author sim
@@ -17,6 +21,7 @@ public class SetCosmeticBug extends javax.swing.JFrame {
      */
     public SetCosmeticBug() {
         initComponents();
+
     }
 
     /**
@@ -49,7 +54,10 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         stepsArea = new javax.swing.JTextArea();
 
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Cosmetic cosmeticBug = new Cosmetic();
 
         priorityLabel.setText("Priority");
 
@@ -98,7 +106,7 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         createButton.setText("Create");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt);
+                createButtonActionPerformed(evt, cosmeticBug);
             }
         });
 
@@ -214,8 +222,34 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Cosmetic bug) {
         // TODO add your handling code here:
+
+        int x = 0;
+        String combo = String.valueOf(priorityCombo.getSelectedItem());
+
+        if (combo == "1"){
+            x = 1;
+        }
+        else if (combo == "2"){
+            x = 2;
+        }
+        else if (combo == "3"){
+            x = 3;
+        }
+        else if (combo == "4"){
+            x = 4;
+        }
+
+//        bug.setPriority(priorityComboActionPerformed(evt));
+        bug.setPriority(x);
+        bug.setStringID(stringIDField.getText());
+        bug.setSummary(summaryText.getText());
+        bug.setDescription(descriptionArea.getText());
+        bug.setStepToReproduce(stepsArea.getText());
+        bug.setActual(actualArea.getText());
+        bug.setExpected(expectedArea.getText());
+        System.out.println(bug.toString());
 
     }
 

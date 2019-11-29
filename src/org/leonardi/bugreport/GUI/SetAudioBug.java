@@ -226,6 +226,21 @@ public class SetAudioBug extends javax.swing.JFrame {
 
     private void priorityComboActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+//        String combo = String.valueOf(priorityCombo.getSelectedItem());
+//        int a = 0;
+//        switch (combo){
+//            case "1":
+//                a = 1;
+//            case "2":
+//                a = 2;
+//            case "3":
+//                a = 3;
+//            case "4":
+//                a = 4;
+//            default:
+//                a = 4;
+//        }
+//        System.out.println(a);
     }
 
     private void stringIDFieldActionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,6 +257,7 @@ public class SetAudioBug extends javax.swing.JFrame {
 
     private void yesRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+
     }
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Audio bug) {
@@ -250,12 +266,31 @@ public class SetAudioBug extends javax.swing.JFrame {
 //
 //        }
         String select = "";
+        int x = 0;
         if(yesRadioButton.isSelected()){
             select = yesRadioButton.getText();
         }
         else if (noRadioButton.isSelected()){
             select = noRadioButton.getText();
         }
+
+        String combo = String.valueOf(priorityCombo.getSelectedItem());
+
+        if (combo == "1"){
+            x = 1;
+        }
+        else if (combo == "2"){
+            x = 2;
+        }
+        else if (combo == "3"){
+            x = 3;
+        }
+        else if (combo == "4"){
+            x = 4;
+        }
+
+//        bug.setPriority(priorityComboActionPerformed(evt));
+        bug.setPriority(x);
         bug.setStringID(stringIDField.getText());
         bug.setSummary(summaryText.getText());
         bug.setDescription(descriptionArea.getText());
