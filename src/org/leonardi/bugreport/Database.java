@@ -11,8 +11,8 @@ public class Database {
 
 
     /* this array is used to collect all the objects */
-    public static ArrayList<AbstractBug> bugs = new ArrayList<>();
-    public static ArrayList<Integer> list = new ArrayList<>();
+    public ArrayList<AbstractBug> bugs = new ArrayList<>();
+    public ArrayList<Integer> list = new ArrayList<>();
 
     public int bugCount(){
         return bugs.size();
@@ -24,7 +24,6 @@ public class Database {
         id++;
         bug.setId(id);
         addIdsInArray();
-        writeOnFile(bug);
     }
 
     public void displayBugs (){
@@ -33,11 +32,16 @@ public class Database {
         }
     }
 
-    public void addIdsInArray (){
-
+    public ArrayList<Integer> addIdsInArray (){
+        ArrayList<Integer> idList = new ArrayList<>();
         for (AbstractBug bug : bugs) {
-            list.add(bug.getId());
-        }
+            idList.add(bug.getId());
+        } return idList;
+
+    }
+
+    public String toString(Integer bugID){
+        return bugs.get(bugID).toString();
     }
 
     /* method to search through the array according to the ID selected*/

@@ -27,14 +27,14 @@ public class OpenExistingBugs extends javax.swing.JFrame {
         listLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
 
-
+        Database database = new Database();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         listLabel.setText("Bug list");
 
         DefaultListModel<Integer> l1 = new DefaultListModel<>();
-        for (int i = 0; i<Database.list.size(); i++){
-            l1.addElement(Database.list.get(i));
+        for (int i = 0; i< database.addIdsInArray().size(); i++){
+            l1.addElement(database.addIdsInArray().get(i));
         }
 
         listOfBugs = new javax.swing.JList<>(l1);
@@ -46,8 +46,9 @@ public class OpenExistingBugs extends javax.swing.JFrame {
 
                     // Double-click detected
                     int index = list.locationToIndex(evt.getPoint());
-                    OpenBug test = new OpenBug();
-                    test.setBugArea(Database.bugs.get(1).toString());
+                    Integer number = evt.getButton();
+                    OpenBug bugScreen = new OpenBug();
+                    bugScreen.setBugArea(database.toString(number));
 
                 } else if (evt.getClickCount() == 3) {
 
