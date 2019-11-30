@@ -1,6 +1,5 @@
 package org.leonardi.bugreport.GUI;
 
-import org.leonardi.bugreport.GUI.OpenBug;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -29,24 +28,24 @@ public class FirstWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        createButton = new javax.swing.JToggleButton();
+        searchButton = new javax.swing.JToggleButton();
+        deleteButton = new javax.swing.JToggleButton();
+        openButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setText("Create");
-        jToggleButton1.addActionListener(evt -> jToggleButton1ActionPerformed(evt));
+        createButton.setText("Create");
+        createButton.addActionListener(evt -> jToggleButton1ActionPerformed(evt));
 
-        jToggleButton2.setText("Search");
-        jToggleButton2.addActionListener(evt -> jToggleButton2ActionPerformed(evt));
+        searchButton.setText("Search");
+        searchButton.addActionListener(evt -> jToggleButton2ActionPerformed(evt));
 
-        jToggleButton3.setText("Delete");
-        jToggleButton3.addActionListener(evt -> jToggleButton3ActionPerformed(evt));
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(evt -> jToggleButton3ActionPerformed(evt));
 
-        jToggleButton4.setText("Open");
-        jToggleButton4.addActionListener(evt -> jToggleButton4ActionPerformed(evt));
+        openButton.setText("Open");
+        openButton.addActionListener(evt -> jToggleButton4ActionPerformed(evt));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,23 +54,23 @@ public class FirstWindow extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(openButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(jToggleButton1)
+                                .addComponent(createButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButton2)
+                                .addComponent(searchButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jToggleButton4)
+                                .addComponent(openButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButton3)
+                                .addComponent(deleteButton)
                                 .addGap(28, 28, 28))
         );
 
@@ -125,9 +124,9 @@ public class FirstWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton createButton;
+    private javax.swing.JToggleButton searchButton;
+    private javax.swing.JToggleButton deleteButton;
+    private javax.swing.JToggleButton openButton;
     // End of variables declaration
 }

@@ -9,14 +9,25 @@ public class Database {
 
     private int id = 0;
 
+
     /* this array is used to collect all the objects */
-    private ArrayList<AbstractBug> bugs = new ArrayList<>();
+    public ArrayList<AbstractBug> bugs = new ArrayList<>();
+
+    public int bugCount(){
+        return bugs.size();
+    }
 
     /* method to add bugs into the array */
     public void addBug(AbstractBug bug) {
         bugs.add(bug);
         id++;
         bug.setId(id);
+    }
+
+    public void displayBugs (){
+        for (AbstractBug bug : bugs) {
+            System.out.println(bug.getId());
+        }
     }
 
     /* method to search through the array according to the ID selected*/

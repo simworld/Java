@@ -1,6 +1,9 @@
 package org.leonardi.bugreport.GUI;
 
+import org.leonardi.bugreport.Database;
+
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.rmi.server.ExportException;
 
@@ -101,22 +104,31 @@ public class OpenBug extends javax.swing.JFrame {
 
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
         // TODO add your handling code here:
+        Database database = new Database();
+//        bugArea.append(String.valueOf(database.bugs));
+        if (database.bugs.isEmpty()){
+            bugArea.setText("this is empty");
+        } else
+            for (int i = 0; i<database.bugs.size(); i++){
+                bugArea.setText(String.valueOf(database.bugs.get(i).getId()));
+        }
+        database.displayBugs();
 
-        JFileChooser open = new JFileChooser();
-        int status = open.showOpenDialog(null);
-        if (status == JFileChooser.APPROVE_OPTION){
-            File file = open.getSelectedFile();
-            try{
-                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-                bugArea.read(input, "Reading File");
-                JOptionPane.showMessageDialog(null, "File Read");
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        else {
-            System.out.println("Operation Cancelled");
-        }
+//        JFileChooser open = new JFileChooser();
+//        int status = open.showOpenDialog(null);
+//        if (status == JFileChooser.APPROVE_OPTION){
+//            File file = open.getSelectedFile();
+//            try{
+//                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+//                bugArea.read(input, "Reading File");
+//                JOptionPane.showMessageDialog(null, "File Read");
+//            } catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+//        else {
+//            System.out.println("Operation Cancelled");
+//        }
     }
 
     /**
@@ -156,7 +168,7 @@ public class OpenBug extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SetCodeBug().setVisible(true);
+                new OpenBug().setVisible(true);
             }
         });
     }
