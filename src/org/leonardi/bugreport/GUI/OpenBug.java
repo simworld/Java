@@ -105,13 +105,10 @@ public class OpenBug extends javax.swing.JFrame {
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
         // TODO add your handling code here:
 //        bugArea.append(String.valueOf(database.bugs));
-        if (Database.bugs.isEmpty()){
-            bugArea.setText("this is empty");
-        } else
-            for (int i = 0; i<Database.bugs.size(); i++){
-                bugArea.setText(String.valueOf(Database.bugs.get(i).getId()));
-                System.out.println("\n");
-            }
+
+        for (int i = 0; i < Database.bugs.size(); i++) {
+            bugArea.setText(String.valueOf(Database.bugs.get(i).getId()));
+        }
 
 
 
