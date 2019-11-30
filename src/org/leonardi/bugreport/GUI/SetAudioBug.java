@@ -3,7 +3,6 @@ import org.leonardi.bugreport.Database;
 import org.leonardi.bugreport.model.Audio;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.awt.event.ActionEvent;
 
 public class SetAudioBug extends javax.swing.JFrame {
@@ -54,6 +53,7 @@ public class SetAudioBug extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Audio audioBug = new Audio();
+        Database database = new Database();
 
         priorityLabel.setText("Priority");
 
@@ -104,7 +104,7 @@ public class SetAudioBug extends javax.swing.JFrame {
 
             createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt, audioBug);
+                createButtonActionPerformed(evt, audioBug, database);
             }
         });
 
@@ -251,6 +251,7 @@ public class SetAudioBug extends javax.swing.JFrame {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        setVisible(false);
     }
 
     private void summaryTextActionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,7 +263,7 @@ public class SetAudioBug extends javax.swing.JFrame {
 
     }
 
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Audio bug) {
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Audio bug, Database data) {
         // TODO add your handling code here:
         //        if(jComboBox3.getSelectedItem()){
 //
@@ -292,7 +293,6 @@ public class SetAudioBug extends javax.swing.JFrame {
         }
 
 //        bug.setPriority(priorityComboActionPerformed(evt));
-        Database database = new Database();
         bug.setPriority(x);
         bug.setStringID(stringIDField.getText());
         bug.setSummary(summaryText.getText());
@@ -301,7 +301,10 @@ public class SetAudioBug extends javax.swing.JFrame {
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
         bug.setRerecording(select);
-        database.addBug(bug);
+
+        data.addBug(bug);
+        data.writeOnFile();
+
         System.out.println(bug.toString());
 
     }

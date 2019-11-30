@@ -57,9 +57,10 @@ public class Database {
     /* reads files saved locally */
     public void readOnFile() {
         ObjectInputStream fileIn;
+        String fileName =  "bugs.txt";
 
         try {
-            fileIn = new ObjectInputStream(new FileInputStream("bugs.txt"));
+            fileIn = new ObjectInputStream(new FileInputStream(fileName));
             System.out.println("Opened file successfully.");
             for (AbstractBug bug : bugs) {
                 System.out.println(bug.toString()); // a method describing the object
@@ -74,7 +75,7 @@ public class Database {
 
     /* method to save on file */
     public void writeOnFile() {
-        String fileName = "bugs.txt";
+        String fileName =  "bugs.txt";
         ObjectOutputStream fileOut;
         try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));

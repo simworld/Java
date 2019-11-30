@@ -6,9 +6,11 @@ package org.leonardi.bugreport.GUI;
  * and open the template in the editor.
  */
 
+import org.leonardi.bugreport.Database;
 import org.leonardi.bugreport.model.Cosmetic;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 
 /**
  *
@@ -58,6 +60,7 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Cosmetic cosmeticBug = new Cosmetic();
+        Database database = new Database();
 
         priorityLabel.setText("Priority");
 
@@ -106,7 +109,7 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         createButton.setText("Create");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt, cosmeticBug);
+                createButtonActionPerformed(evt, cosmeticBug, database);
             }
         });
 
@@ -216,13 +219,14 @@ public class SetCosmeticBug extends javax.swing.JFrame {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        setVisible(false);
     }
 
     private void summaryTextActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Cosmetic bug) {
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Cosmetic bug, Database data) {
         // TODO add your handling code here:
 
         int x = 0;
@@ -249,8 +253,11 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         bug.setStepToReproduce(stepsArea.getText());
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
-        System.out.println(bug.toString());
 
+        data.addBug(bug);
+        data.writeOnFile();
+
+        System.out.println(bug.toString());
     }
 
     /**

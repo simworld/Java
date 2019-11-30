@@ -9,6 +9,9 @@ package org.leonardi.bugreport.GUI;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
+import javax.swing.*;
+import java.util.Set;
+
 /**
  *
  * @author sim
@@ -187,6 +190,7 @@ public class SetCodeBug extends javax.swing.JFrame {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        setVisible(false);
     }
 
     private void summaryTextActionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,6 +266,7 @@ public class SetCodeBug extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SetCodeBug().setVisible(true);
+
             }
         });
     }
