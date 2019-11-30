@@ -24,8 +24,6 @@ public class OpenExistingBugs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        JFrame f= new JFrame();
-
         listLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
 
@@ -48,7 +46,9 @@ public class OpenExistingBugs extends javax.swing.JFrame {
 
                     // Double-click detected
                     int index = list.locationToIndex(evt.getPoint());
-                    new OpenBug().setVisible(true);
+                    OpenBug test = new OpenBug();
+                    test.setBugArea(Database.bugs.get(1).toString());
+
                 } else if (evt.getClickCount() == 3) {
 
                     // Triple-click detected

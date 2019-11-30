@@ -178,6 +178,11 @@ public class OpenBug extends javax.swing.JFrame {
     // Variables declaration - do not modify
     private javax.swing.JTextArea bugArea;
     private javax.swing.JLabel bugLabel;
+
+    public void setBugArea(JTextArea bugArea) {
+        this.bugArea = bugArea;
+    }
+
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton openButton;
     private javax.swing.JScrollPane jScrollPane1;

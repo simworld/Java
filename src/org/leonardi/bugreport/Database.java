@@ -24,6 +24,7 @@ public class Database {
         id++;
         bug.setId(id);
         addIdsInArray();
+        writeOnFile(bug);
     }
 
     public void displayBugs (){
