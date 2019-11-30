@@ -47,7 +47,7 @@ public class OpenBug extends javax.swing.JFrame {
             }
         });
 
-        openButton.setText("Open");
+        openButton.setText("Load");
         openButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -104,15 +104,16 @@ public class OpenBug extends javax.swing.JFrame {
 
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
         // TODO add your handling code here:
-        Database database = new Database();
 //        bugArea.append(String.valueOf(database.bugs));
-        if (database.bugs.isEmpty()){
+        if (Database.bugs.isEmpty()){
             bugArea.setText("this is empty");
         } else
-            for (int i = 0; i<database.bugs.size(); i++){
-                bugArea.setText(String.valueOf(database.bugs.get(i).getId()));
-        }
-        database.displayBugs();
+            for (int i = 0; i<Database.bugs.size(); i++){
+                bugArea.setText(String.valueOf(Database.bugs.get(i).getId()));
+                System.out.println("\n");
+            }
+
+
 
 //        JFileChooser open = new JFileChooser();
 //        int status = open.showOpenDialog(null);

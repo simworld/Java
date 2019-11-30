@@ -11,7 +11,7 @@ public class Database {
 
 
     /* this array is used to collect all the objects */
-    public ArrayList<AbstractBug> bugs = new ArrayList<>();
+    public static ArrayList<AbstractBug> bugs = new ArrayList<>();
 
     public int bugCount(){
         return bugs.size();
