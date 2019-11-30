@@ -3,9 +3,7 @@ package org.leonardi.bugreport.GUI;
 import org.leonardi.bugreport.Database;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.io.*;
-import java.rmi.server.ExportException;
 
 
 public class OpenBug extends javax.swing.JFrame {
@@ -13,7 +11,7 @@ public class OpenBug extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public OpenBug() {
+    public OpenBug(int bugID) {
         initComponents();
     }
 
@@ -39,7 +37,8 @@ public class OpenBug extends javax.swing.JFrame {
         bugArea.setColumns(20);
         bugArea.setRows(5);
         jScrollPane1.setViewportView(bugArea);
-        bugArea.setText("here we should display the bugID list");
+        Database database = new Database();
+        bugArea.setText(database.toString(1));
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +105,11 @@ public class OpenBug extends javax.swing.JFrame {
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
         // TODO add your handling code here:
 //        bugArea.append(String.valueOf(database.bugs));
-        new OpenExistingBugs().setVisible(true);
+        new OpenExistingBugsList().setVisible(true);
+
+
+
+
 
 //        for (int i = 0; i < Database.bugs.size(); i++) {
 ////            bugArea.setText(String.valueOf(Database.bugs.get(i).getId()));
@@ -170,14 +173,13 @@ public class OpenBug extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OpenBug().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify
     private javax.swing.JTextArea bugArea;
-    private javax.swing.JLabel bugLabel;
+    public javax.swing.JLabel bugLabel;
 
     public void setBugArea(JTextArea bugArea) {
         this.bugArea = bugArea;

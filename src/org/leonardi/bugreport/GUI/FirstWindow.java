@@ -86,7 +86,7 @@ public class FirstWindow extends javax.swing.JFrame {
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {
     }
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt){
-        new OpenBug().setVisible(true);
+        new OpenExistingBugsList().setVisible(true);
     }
     /**
      * @param args the command line arguments

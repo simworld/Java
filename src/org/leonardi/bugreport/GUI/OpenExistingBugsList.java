@@ -6,12 +6,12 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class OpenExistingBugs extends javax.swing.JFrame {
+public class OpenExistingBugsList extends javax.swing.JFrame {
 
     /**
      * Creates new form OpenExistingBugsboh
      */
-    public OpenExistingBugs() {
+    public OpenExistingBugsList() {
         initComponents();
     }
 
@@ -46,9 +46,8 @@ public class OpenExistingBugs extends javax.swing.JFrame {
 
                     // Double-click detected
                     int index = list.locationToIndex(evt.getPoint());
-                    Integer number = evt.getButton();
-                    OpenBug bugScreen = new OpenBug();
-                    bugScreen.setBugArea(database.toString(number));
+                    OpenBug bugScreen = new OpenBug(index);
+                    bugScreen.setVisible(true);
 
                 } else if (evt.getClickCount() == 3) {
 
@@ -110,13 +109,13 @@ public class OpenExistingBugs extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OpenExistingBugs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpenExistingBugsList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OpenExistingBugs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpenExistingBugsList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OpenExistingBugs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpenExistingBugsList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(OpenExistingBugs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpenExistingBugsList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -124,7 +123,7 @@ public class OpenExistingBugs extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OpenExistingBugs().setVisible(true);
+                new OpenExistingBugsList().setVisible(true);
             }
         });
     }

@@ -33,8 +33,8 @@ public class Database {
 
     public ArrayList<Integer> addIdsInArray (){
         ArrayList<Integer> idList = new ArrayList<>();
-        for (AbstractBug bug : bugs) {
-            idList.add(bug.getId());
+        for (int i = 0; i<bugs.size();i++){
+            idList.add(bugs.get(i).getId());
         } return idList;
 
     }
