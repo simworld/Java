@@ -85,7 +85,8 @@ public class SelectBug extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
 
-        System.exit(1);
+//        System.exit(0);
+        setVisible(false);
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {

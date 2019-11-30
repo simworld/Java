@@ -1,7 +1,6 @@
 package org.leonardi.bugreport.GUI;
 
-import javax.swing.*;
-
+import org.leonardi.bugreport.GUI.OpenBug;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -41,10 +40,13 @@ public class FirstWindow extends javax.swing.JFrame {
         jToggleButton1.addActionListener(evt -> jToggleButton1ActionPerformed(evt));
 
         jToggleButton2.setText("Search");
+        jToggleButton2.addActionListener(evt -> jToggleButton2ActionPerformed(evt));
 
         jToggleButton3.setText("Delete");
+        jToggleButton3.addActionListener(evt -> jToggleButton3ActionPerformed(evt));
 
         jToggleButton4.setText("Open");
+        jToggleButton4.addActionListener(evt -> jToggleButton4ActionPerformed(evt));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,7 +81,14 @@ public class FirstWindow extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         new SelectBug().setVisible(true);
     }
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
+    }
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    }
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt){
+        new OpenBug().setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
