@@ -1,7 +1,9 @@
 package org.leonardi.bugreport.GUI;
+import org.leonardi.bugreport.Database;
 import org.leonardi.bugreport.model.Audio;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.awt.event.ActionEvent;
 
 public class SetAudioBug extends javax.swing.JFrame {
@@ -290,6 +292,7 @@ public class SetAudioBug extends javax.swing.JFrame {
         }
 
 //        bug.setPriority(priorityComboActionPerformed(evt));
+        Database database = new Database();
         bug.setPriority(x);
         bug.setStringID(stringIDField.getText());
         bug.setSummary(summaryText.getText());
@@ -298,6 +301,7 @@ public class SetAudioBug extends javax.swing.JFrame {
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
         bug.setRerecording(select);
+        database.addBug(bug);
         System.out.println(bug.toString());
 
     }

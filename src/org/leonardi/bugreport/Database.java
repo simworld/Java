@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /* this class collect, save, search, write and read all objects */
 
-class Database {
+public class Database {
 
     private int id = 0;
 
