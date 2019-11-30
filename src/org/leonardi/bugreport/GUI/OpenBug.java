@@ -39,6 +39,7 @@ public class OpenBug extends javax.swing.JFrame {
         bugArea.setColumns(20);
         bugArea.setRows(5);
         jScrollPane1.setViewportView(bugArea);
+        bugArea.setText("here we should display the bugID list");
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,10 +106,13 @@ public class OpenBug extends javax.swing.JFrame {
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
         // TODO add your handling code here:
 //        bugArea.append(String.valueOf(database.bugs));
+        new OpenExistingBugs().setVisible(true);
 
-        for (int i = 0; i < Database.bugs.size(); i++) {
-            bugArea.setText(String.valueOf(Database.bugs.get(i).getId()));
-        }
+//        for (int i = 0; i < Database.bugs.size(); i++) {
+////            bugArea.setText(String.valueOf(Database.bugs.get(i).getId()));
+//            bugArea.setText(String.valueOf(i));
+//        }
+
 
 
 

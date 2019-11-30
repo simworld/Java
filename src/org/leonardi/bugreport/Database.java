@@ -12,6 +12,7 @@ public class Database {
 
     /* this array is used to collect all the objects */
     public static ArrayList<AbstractBug> bugs = new ArrayList<>();
+    public static ArrayList<Integer> list = new ArrayList<>();
 
     public int bugCount(){
         return bugs.size();
@@ -22,11 +23,19 @@ public class Database {
         bugs.add(bug);
         id++;
         bug.setId(id);
+        addIdsInArray();
     }
 
     public void displayBugs (){
         for (AbstractBug bug : bugs) {
             System.out.println(bug.getId());
+        }
+    }
+
+    public void addIdsInArray (){
+
+        for (AbstractBug bug : bugs) {
+            list.add(bug.getId());
         }
     }
 
