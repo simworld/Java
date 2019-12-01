@@ -290,6 +290,7 @@ public class SetAudioBug extends javax.swing.JFrame {
         }
 
 //        bug.setPriority(priorityComboActionPerformed(evt));
+        Database database = new Database();
         bug.setPriority(x);
         bug.setStringID(stringIDField.getText());
         bug.setSummary(summaryText.getText());
@@ -297,6 +298,7 @@ public class SetAudioBug extends javax.swing.JFrame {
         bug.setStepToReproduce(stepsArea.getText());
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
+        database.addBug(bug);
         bug.setRerecording(select);
         System.out.println(bug.toString());
         setVisible(false);

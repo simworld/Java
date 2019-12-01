@@ -81,53 +81,53 @@ class UserInput {
     }
 
     /* all the following method are intended to create a selectable menu in the console */
-//    private static int selection() {
-//        System.out.println("What you want to do.\n" +
-//                "1. Create\n" +
-//                "2. Search\n" +
-//                "3. Modify\n" +
-//                "4. Delete\n" +
-//                "5. Exit");
-//        Scanner userInput = new Scanner(System.in);
-//        return userInput.nextInt();
-//    }
-//
-//    public void menu() {
-//
-//        switch (selection()) {
-//            case 1:
-//                Database database3 = new Database();
-//                AbstractBug bug1 = UserInput.createBugFromUserInput();
-//                database3.addBug(bug1);
-//                menu();
-//
-//            case 2:
-//                Database database = new Database();
-//                if (database.checkIfNull()) {
-//                    System.out.println("Database is empty");
-//                    menu();
-//                } else
-//                    database.searchBug(askForABug());
-//            case 3:
-//                System.out.println("this is not done yet");
-//                menu();
-//            case 4:
-//                Database database2 = new Database();
-//                if (database2.checkIfNull()) {
-//                    System.out.println("Database is empty");
-//                    menu();
-//                } else
-//                    database2.deleteBug(askForABug());
-//            case 5:
-//                System.exit(0);
-//        }
-//
-//    }
-//
-//    public static int askForABug() {
-//        System.out.println("Enter a bug number.");
-//        Scanner userInput = new Scanner(System.in);
-//        return userInput.nextInt();
-//    }
+    private static int selection() {
+        System.out.println("What you want to do.\n" +
+                "1. Create\n" +
+                "2. Search\n" +
+                "3. Modify\n" +
+                "4. Delete\n" +
+                "5. Exit");
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextInt();
+    }
+
+    public void menu() {
+
+        switch (selection()) {
+            case 1:
+                Database database3 = new Database();
+                AbstractBug bug1 = UserInput.createBugFromUserInput();
+                database3.addBug(bug1);
+                menu();
+
+            case 2:
+                Database database = new Database();
+                if (database.checkIfNull()) {
+                    System.out.println("Database is empty");
+                    menu();
+                } else
+                    database.searchBug(askForABug());
+            case 3:
+                System.out.println("this is not done yet");
+                menu();
+            case 4:
+                Database database2 = new Database();
+                if (database2.checkIfNull()) {
+                    System.out.println("Database is empty");
+                    menu();
+                } else
+                    database2.deleteBug(askForABug());
+            case 5:
+                System.exit(0);
+        }
+
+    }
+
+    public static int askForABug() {
+        System.out.println("Enter a bug number.");
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextInt();
+    }
 
 }

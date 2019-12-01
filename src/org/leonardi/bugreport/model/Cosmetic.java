@@ -20,7 +20,7 @@ public class Cosmetic extends AbstractBug {
 
     @Override
     public String toString() {
-        return super.toString() + "\nString ID:" + stringID + "\n";
+        return super.toString() + "\nString ID: " + stringID;
     }
 
     public String getStringID() {

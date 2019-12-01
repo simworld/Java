@@ -20,7 +20,7 @@ public class Audio extends AbstractBug {
 
     @Override
     public String toString() {
-        return super.toString() + "\nString ID: " + stringID + "\nRerecording: " + rerecording +"\n";
+        return super.toString() + "\nString ID: " + stringID + "\nRerecording: " + rerecording;
     }
 
     private String getStringID() {
