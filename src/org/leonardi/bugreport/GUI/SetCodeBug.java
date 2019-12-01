@@ -6,7 +6,6 @@ package org.leonardi.bugreport.GUI;
  * and open the template in the editor.
  */
 
-import org.leonardi.bugreport.Database;
 import org.leonardi.bugreport.model.Code;
 import org.leonardi.bugreport.model.Cosmetic;
 
@@ -221,12 +220,6 @@ public class SetCodeBug extends javax.swing.JFrame {
         bug.setStepToReproduce(stepsArea.getText());
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
-
-        Database database = new Database();
-        database.addBug(bug);
-        database.writeOnFile(bug);
-        setVisible(false);
-
         System.out.println(bug.toString());
 
     }

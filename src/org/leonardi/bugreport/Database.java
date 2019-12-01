@@ -2,17 +2,17 @@ package org.leonardi.bugreport;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 /* this class collect, save, search, write and read all objects */
 
 public class Database {
 
-//    private int id = 0;
+    private int id = 0;
 
-    Random rand = new Random();
+
     /* this array is used to collect all the objects */
     public ArrayList<AbstractBug> bugs = new ArrayList<>();
+    public static ArrayList idList = new ArrayList();
 
     public int bugCount(){
         return bugs.size();
@@ -21,9 +21,9 @@ public class Database {
     /* method to add bugs into the array */
     public void addBug(AbstractBug bug) {
         bugs.add(bug);
-        int id = rand.nextInt(1000);
+        id++;
         bug.setId(id);
-//        addIdsInArray();
+        addIdsInArray();
     }
 
     public void displayBugs (){
@@ -32,11 +32,10 @@ public class Database {
         }
     }
 
-    public ArrayList<Integer> addIdsInArray (){
-        ArrayList<Integer> idList = new ArrayList<>();
+    public void addIdsInArray (){
         for (int i = 0; i<bugs.size();i++){
             idList.add(bugs.get(i).getId());
-        } return idList;
+        }
 
     }
 
@@ -98,18 +97,16 @@ public class Database {
     }
 
     /* method to save on file */
-    public void writeOnFile(AbstractBug bug) {
-        String fileName = "bug_"+bug.getId()+".txt";
+    public void writeOnFile() {
+        String fileName = "bugs.text";
         ObjectOutputStream fileOut;
-
         try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
-            fileOut.writeObject(bug.toString());
-//            for (AbstractBug bug : bugs) {
-//                fileOut.writeObject(bug.toString());
-//            }
+            for (AbstractBug bug : bugs) {
+                fileOut.writeObject(bug.toString());
+            }
             fileOut.close();
-            System.out.println("Bugs content saved.");
+            System.out.println("Bugs contents saved.");
 
         } catch (IOException e) {
             System.out.println("IO Error : " + e.getMessage());
