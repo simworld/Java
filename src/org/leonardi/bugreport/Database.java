@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Database {
 
     private int id = 0;
+    private String filePath = "D:\\DEV\\opp-assignment\\";
 
 
     /* this array is used to collect all the objects */
@@ -96,17 +97,52 @@ public class Database {
         }
     }
 
+    public void writeObjectToFile(AbstractBug serObj) {
+
+        try {
+
+            FileOutputStream fileOut = new FileOutputStream("data.txt");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(serObj);
+            objectOut.close();
+            System.out.println("The Object  was succesfully written to a file");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void ReadObjectFromFile() {
+
+        try {
+
+            FileInputStream fileIn = new FileInputStream(filePath);
+            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+
+            AbstractBug bug1 = bugs.get(0);
+
+            System.out.println("The Object has been read from the file");
+            objectIn.close();
+            System.out.println(bug1.toString());
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     /* method to save on file */
-    public void writeOnFile() {
-        String fileName = "bugs.text";
+    public void writeOnFile(AbstractBug bug) {
+        String fileName = "bug_"+bug.getId()+".txt";
         ObjectOutputStream fileOut;
+
         try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
-            for (AbstractBug bug : bugs) {
-                fileOut.writeObject(bug.toString());
-            }
+            fileOut.writeObject(bug.toString());
+//            for (AbstractBug bug : bugs) {
+//                fileOut.writeObject(bug.toString());
+//            }
             fileOut.close();
-            System.out.println("Bugs contents saved.");
+            System.out.println("Bugs content saved.");
 
         } catch (IOException e) {
             System.out.println("IO Error : " + e.getMessage());

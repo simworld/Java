@@ -98,6 +98,7 @@ public class SelectBug extends javax.swing.JFrame {
         else if (combo == "Code"){
             new SetCodeBug().setVisible(true);
         }
+
     }
 
 
