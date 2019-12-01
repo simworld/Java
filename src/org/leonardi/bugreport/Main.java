@@ -34,6 +34,5 @@ public class Main extends JFrame{
 
         database.deleteBug(2);
 
-
     }
 }
