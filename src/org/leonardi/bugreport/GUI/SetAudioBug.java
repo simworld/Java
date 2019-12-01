@@ -294,9 +294,12 @@ public class SetAudioBug extends javax.swing.JFrame {
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
         bug.setRerecording(select);
-        System.out.println(bug.toString());
+
         Database.database.addBug(bug);
         Database.database.writeOnFile(bug);
+
+        System.out.println(bug.toString());
+
         setVisible(false);
         dispose();
     }

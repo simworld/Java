@@ -93,12 +93,10 @@ public class OpenBug extends javax.swing.JFrame {
     }
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         setVisible(false);
     }
 
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
-        // TODO add your handling code here:
         JFileChooser open = new JFileChooser();
         int status = open.showOpenDialog(null);
         if (status == JFileChooser.APPROVE_OPTION){

@@ -219,9 +219,12 @@ public class SetCodeBug extends javax.swing.JFrame {
         bug.setStepToReproduce(stepsArea.getText());
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
-        System.out.println(bug.toString());
+
         Database.database.addBug(bug);
         Database.database.writeOnFile(bug);
+
+        System.out.println(bug.toString());
+
         setVisible(false);
         dispose();
     }
