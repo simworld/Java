@@ -29,20 +29,13 @@ public class FirstWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         createButton = new javax.swing.JToggleButton();
-        searchButton = new javax.swing.JToggleButton();
-        deleteButton = new javax.swing.JToggleButton();
+
         openButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         createButton.setText("Create");
         createButton.addActionListener(evt -> jToggleButton1ActionPerformed(evt));
-
-        searchButton.setText("Search");
-        searchButton.addActionListener(evt -> jToggleButton2ActionPerformed(evt));
-
-        deleteButton.setText("Delete");
-        deleteButton.addActionListener(evt -> jToggleButton3ActionPerformed(evt));
 
         openButton.setText("Open");
         openButton.addActionListener(evt -> jToggleButton4ActionPerformed(evt));
@@ -55,8 +48,6 @@ public class FirstWindow extends javax.swing.JFrame {
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(openButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -66,11 +57,9 @@ public class FirstWindow extends javax.swing.JFrame {
                                 .addGap(20, 20, 20)
                                 .addComponent(createButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(searchButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(openButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(deleteButton)
                                 .addGap(28, 28, 28))
         );
 
@@ -80,11 +69,7 @@ public class FirstWindow extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         new SelectBug().setVisible(true);
     }
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
-    }
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-    }
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt){
         new OpenBug().setVisible(true);
     }
@@ -125,8 +110,6 @@ public class FirstWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify
     private javax.swing.JToggleButton createButton;
-    private javax.swing.JToggleButton searchButton;
-    private javax.swing.JToggleButton deleteButton;
     private javax.swing.JToggleButton openButton;
     // End of variables declaration
 }

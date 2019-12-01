@@ -304,7 +304,7 @@ public class SetAudioBug extends javax.swing.JFrame {
         database.writeOnFile(bug);
         System.out.println(bug.toString());
         setVisible(false);
-        new FirstWindow().setVisible(true);
+//        new FirstWindow().setVisible(true);
 
 
     }

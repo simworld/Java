@@ -7,17 +7,11 @@ import java.io.*;
 
 
 public class OpenBug extends javax.swing.JFrame {
-    private javax.swing.JTextArea bugArea;
-    private javax.swing.JLabel bugLabel;
-
-    private javax.swing.JButton cancelButton;
-    private javax.swing.JButton openButton;
-    private javax.swing.JScrollPane jScrollPane1;
 
     /**
      * Creates new form NewJFrame
      */
-    public OpenBug() {
+    public OpenBug(int bugID) {
         initComponents();
     }
 
@@ -36,11 +30,15 @@ public class OpenBug extends javax.swing.JFrame {
         cancelButton = new javax.swing.JButton();
         openButton = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         bugLabel.setText("Bug ");
 
         bugArea.setColumns(20);
         bugArea.setRows(5);
         jScrollPane1.setViewportView(bugArea);
+        Database database = new Database();
+        bugArea.setText(database.toString(1));
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -49,7 +47,7 @@ public class OpenBug extends javax.swing.JFrame {
             }
         });
 
-        openButton.setText("Open");
+        openButton.setText("Load");
         openButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -100,16 +98,17 @@ public class OpenBug extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
         setVisible(false);
-
     }
 
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
+        // TODO add your handling code here:
 //        bugArea.append(String.valueOf(database.bugs));
-//        OpenExistingBugsList load = new OpenExistingBugsList();
-//        setVisible(true);
-//        load.setSize(200, 200);
-//        new OpenExistingBugsList().setVisible(true);
+        new OpenExistingBugsList().setVisible(true);
+
+
+
 
 
 //        for (int i = 0; i < Database.bugs.size(); i++) {
@@ -120,25 +119,21 @@ public class OpenBug extends javax.swing.JFrame {
 
 
 
-        JFileChooser open = new JFileChooser();
-        int status = open.showOpenDialog(null);
-        if (status == JFileChooser.APPROVE_OPTION){
-            File file = open.getSelectedFile();
-            try{
-                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-                bugArea.read(input, "Reading File");
-                JOptionPane.showMessageDialog(null, "File Read");
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        else {
-            System.out.println("Operation Cancelled");
-        }
-    }
-
-    public void setBugArea(JTextArea bugArea) {
-        this.bugArea = bugArea;
+//        JFileChooser open = new JFileChooser();
+//        int status = open.showOpenDialog(null);
+//        if (status == JFileChooser.APPROVE_OPTION){
+//            File file = open.getSelectedFile();
+//            try{
+//                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+//                bugArea.read(input, "Reading File");
+//                JOptionPane.showMessageDialog(null, "File Read");
+//            } catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+//        else {
+//            System.out.println("Operation Cancelled");
+//        }
     }
 
     /**
@@ -178,12 +173,20 @@ public class OpenBug extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OpenBug().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify
+    private javax.swing.JTextArea bugArea;
+    public javax.swing.JLabel bugLabel;
 
+    public void setBugArea(JTextArea bugArea) {
+        this.bugArea = bugArea;
+    }
+
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JButton openButton;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration
 }
