@@ -258,6 +258,8 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         data.writeOnFile();
 
         System.out.println(bug.toString());
+        setVisible(false);
+        new FirstWindow().setVisible(true);
     }
 
     /**

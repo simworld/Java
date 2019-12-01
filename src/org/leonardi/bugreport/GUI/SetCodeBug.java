@@ -226,6 +226,9 @@ public class SetCodeBug extends javax.swing.JFrame {
         bug.setExpected(expectedArea.getText());
         System.out.println(bug.toString());
 
+        setVisible(false);
+        new FirstWindow().setVisible(true);
+
     }
 
     /**
