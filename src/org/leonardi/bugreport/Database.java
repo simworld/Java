@@ -9,6 +9,7 @@ public class Database {
 
     private int id = 0;
 
+    public static Database database = new Database();
 
     /* this array is used to collect all the objects */
     public ArrayList<AbstractBug> bugs = new ArrayList<>();
@@ -36,7 +37,6 @@ public class Database {
         for (int i = 0; i<bugs.size();i++){
             idList.add(bugs.get(i).getId());
         }
-
     }
 
     public String toString(Integer bugID){
@@ -79,7 +79,7 @@ public class Database {
     }
 
     /* reads files saved locally */
-    public void readOnFile() {
+    public void readDatabase() {
         ObjectInputStream fileIn;
 
         try {
@@ -98,14 +98,11 @@ public class Database {
 
     /* method to save on file */
     public void writeOnFile(AbstractBug bug) {
-        String fileName = "Bug_" + bug.getId()+ "bugs.text";
+        String fileName = "Bug_" + bug.getId()+ ".txt";
         ObjectOutputStream fileOut;
         try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
             fileOut.writeObject(bug.toString());
-//            for (AbstractBug bug : bugs) {
-//                fileOut.writeObject(bug.toString());
-//            }
             fileOut.close();
             System.out.println("Bugs contents saved.");
 
