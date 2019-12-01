@@ -255,7 +255,7 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         bug.setExpected(expectedArea.getText());
 
         data.addBug(bug);
-        data.writeOnFile();
+        data.writeOnFile(bug);
 
         System.out.println(bug.toString());
     }

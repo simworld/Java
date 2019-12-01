@@ -11,7 +11,7 @@ public class OpenBug extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public OpenBug(int bugID) {
+    public OpenBug() {
         initComponents();
     }
 
@@ -105,7 +105,7 @@ public class OpenBug extends javax.swing.JFrame {
     private void openButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
         // TODO add your handling code here:
 //        bugArea.append(String.valueOf(database.bugs));
-        new OpenExistingBugsList().setVisible(true);
+//        new OpenExistingBugsList().setVisible(true);
 
 
 
@@ -119,21 +119,21 @@ public class OpenBug extends javax.swing.JFrame {
 
 
 
-//        JFileChooser open = new JFileChooser();
-//        int status = open.showOpenDialog(null);
-//        if (status == JFileChooser.APPROVE_OPTION){
-//            File file = open.getSelectedFile();
-//            try{
-//                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-//                bugArea.read(input, "Reading File");
-//                JOptionPane.showMessageDialog(null, "File Read");
-//            } catch (Exception e){
-//                e.printStackTrace();
-//            }
-//        }
-//        else {
-//            System.out.println("Operation Cancelled");
-//        }
+        JFileChooser open = new JFileChooser();
+        int status = open.showOpenDialog(null);
+        if (status == JFileChooser.APPROVE_OPTION){
+            File file = open.getSelectedFile();
+            try{
+                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+                bugArea.read(input, "Reading File");
+                JOptionPane.showMessageDialog(null, "File Read");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("Operation Cancelled");
+        }
     }
 
     /**
