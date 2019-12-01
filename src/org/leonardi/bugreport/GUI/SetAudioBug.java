@@ -1,4 +1,5 @@
 package org.leonardi.bugreport.GUI;
+import org.leonardi.bugreport.Database;
 import org.leonardi.bugreport.model.Audio;
 
 import javax.swing.*;
@@ -298,11 +299,13 @@ public class SetAudioBug extends javax.swing.JFrame {
         bug.setStepToReproduce(stepsArea.getText());
         bug.setActual(actualArea.getText());
         bug.setExpected(expectedArea.getText());
-        database.addBug(bug);
         bug.setRerecording(select);
+        database.addBug(bug);
+        database.writeOnFile(bug);
         System.out.println(bug.toString());
         setVisible(false);
         new FirstWindow().setVisible(true);
+
 
     }
 
