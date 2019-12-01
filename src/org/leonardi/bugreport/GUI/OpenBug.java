@@ -37,8 +37,8 @@ public class OpenBug extends javax.swing.JFrame {
         bugArea.setColumns(20);
         bugArea.setRows(5);
         jScrollPane1.setViewportView(bugArea);
-        Database database = new Database();
-        bugArea.setText(database.toString(1));
+//        Database database = new Database();
+//        bugArea.setText(database.toString(1));
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,6 +173,7 @@ public class OpenBug extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                new OpenBug().setVisible(true);
             }
         });
     }

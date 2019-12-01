@@ -97,14 +97,15 @@ public class Database {
     }
 
     /* method to save on file */
-    public void writeOnFile() {
-        String fileName = "bugs.text";
+    public void writeOnFile(AbstractBug bug) {
+        String fileName = "Bug_" + bug.getId()+ "bugs.text";
         ObjectOutputStream fileOut;
         try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
-            for (AbstractBug bug : bugs) {
-                fileOut.writeObject(bug.toString());
-            }
+            fileOut.writeObject(bug.toString());
+//            for (AbstractBug bug : bugs) {
+//                fileOut.writeObject(bug.toString());
+//            }
             fileOut.close();
             System.out.println("Bugs contents saved.");
 
