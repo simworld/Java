@@ -12,6 +12,7 @@ public class Database {
 
     /* this array is used to collect all the objects */
     public ArrayList<AbstractBug> bugs = new ArrayList<>();
+    public static ArrayList idList = new ArrayList();
 
     public int bugCount(){
         return bugs.size();
@@ -31,11 +32,10 @@ public class Database {
         }
     }
 
-    public ArrayList<Integer> addIdsInArray (){
-        ArrayList<Integer> idList = new ArrayList<>();
+    public void addIdsInArray (){
         for (int i = 0; i<bugs.size();i++){
             idList.add(bugs.get(i).getId());
-        } return idList;
+        }
 
     }
 
@@ -98,7 +98,7 @@ public class Database {
 
     /* method to save on file */
     public void writeOnFile() {
-        String fileName = "bugs.txt";
+        String fileName = "bugs.text";
         ObjectOutputStream fileOut;
         try {
             fileOut = new ObjectOutputStream(new FileOutputStream(fileName));
