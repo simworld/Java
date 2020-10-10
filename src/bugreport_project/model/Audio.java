@@ -1,6 +1,6 @@
-package org.leonardi.bugreport.model;
+package bugreport_project.model;
 
-import org.leonardi.bugreport.AbstractBug;
+import bugreport_project.AbstractBug;
 
 
 public class Audio extends AbstractBug {

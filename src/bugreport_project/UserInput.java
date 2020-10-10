@@ -1,8 +1,8 @@
-package org.leonardi.bugreport;
+package bugreport_project;
 
-import org.leonardi.bugreport.model.Audio;
-import org.leonardi.bugreport.model.Code;
-import org.leonardi.bugreport.model.Cosmetic;
+import bugreport_project.model.Audio;
+import bugreport_project.model.Code;
+import bugreport_project.model.Cosmetic;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package org.leonardi.bugreport;
+package bugreport_project;
 
 import java.util.*;
 

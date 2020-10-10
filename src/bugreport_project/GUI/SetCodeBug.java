@@ -1,10 +1,9 @@
-package org.leonardi.bugreport.GUI;
+package bugreport_project.GUI;
 
-import org.leonardi.bugreport.Database;
-import org.leonardi.bugreport.model.Cosmetic;
+import bugreport_project.model.Code;
+import bugreport_project.Database;
 
-
-public class SetCosmeticBug extends javax.swing.JFrame {
+public class SetCodeBug extends javax.swing.JFrame {
 
     private javax.swing.JTextArea actualArea;
     private javax.swing.JLabel actualLabel;
@@ -22,14 +21,12 @@ public class SetCosmeticBug extends javax.swing.JFrame {
     private javax.swing.JLabel priorityLabel;
     private javax.swing.JTextArea stepsArea;
     private javax.swing.JLabel stepsLabel;
-    private javax.swing.JTextField stringIDField;
-    private javax.swing.JLabel stringIdLabel;
     private javax.swing.JLabel summaryLabel;
     private javax.swing.JTextField summaryText;
 
-    public SetCosmeticBug() {
-        initComponents();
 
+    public SetCodeBug() {
+        initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -38,8 +35,6 @@ public class SetCosmeticBug extends javax.swing.JFrame {
 
         priorityLabel = new javax.swing.JLabel();
         priorityCombo = new javax.swing.JComboBox<>();
-        stringIdLabel = new javax.swing.JLabel();
-        stringIDField = new javax.swing.JTextField();
         descriptionLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         descriptionArea = new javax.swing.JTextArea();
@@ -57,11 +52,9 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         stepsArea = new javax.swing.JTextArea();
 
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Cosmetic cosmeticBug = new Cosmetic();
-        Database database = new Database();
+        Code codeBug = new Code();
 
         priorityLabel.setText("Priority");
 
@@ -69,16 +62,6 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         priorityCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priorityComboActionPerformed(evt);
-            }
-        });
-
-        stringIdLabel.setText("String ID");
-
-        stringIDField.setToolTipText("");
-        stringIDField.setActionCommand("<Not Set>");
-        stringIDField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stringIDFieldActionPerformed(evt);
             }
         });
 
@@ -110,7 +93,7 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         createButton.setText("Create");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt, cosmeticBug, database);
+                createButtonActionPerformed(evt, codeBug );
             }
         });
 
@@ -144,10 +127,6 @@ public class SetCosmeticBug extends javax.swing.JFrame {
                                                 .addComponent(priorityLabel)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(priorityCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(stringIdLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(stringIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(actualLabel)
                                         .addComponent(descriptionLabel)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
@@ -175,20 +154,14 @@ public class SetCosmeticBug extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(summaryLabel)
-                                                        .addComponent(summaryText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(47, 47, 47)
+                                                        .addComponent(summaryText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(priorityCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(priorityLabel))
+                                                .addGap(45, 45, 45)
                                                 .addComponent(stepsLabel)
                                                 .addGap(8, 8, 8)
                                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(priorityLabel)
-                                                        .addComponent(priorityCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(stringIdLabel)
-                                                        .addComponent(stringIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)
                                                 .addComponent(descriptionLabel)
                                                 .addGap(8, 8, 8)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -204,16 +177,13 @@ public class SetCosmeticBug extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(createButton)
                                         .addComponent(cancelButton))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
-    }// </editor-fold>
-
-    private void priorityComboActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
-    private void stringIDFieldActionPerformed(java.awt.event.ActionEvent evt) {
+    private void priorityComboActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,9 +194,10 @@ public class SetCosmeticBug extends javax.swing.JFrame {
     private void summaryTextActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Cosmetic bug, Database data) {
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt, Code bug) {
 
         int x = 0;
+
         String combo = String.valueOf(priorityCombo.getSelectedItem());
 
         if (combo == "1"){
@@ -243,7 +214,6 @@ public class SetCosmeticBug extends javax.swing.JFrame {
         }
 
         bug.setPriority(x);
-        bug.setStringID(stringIDField.getText());
         bug.setSummary(summaryText.getText());
         bug.setDescription(descriptionArea.getText());
         bug.setStepToReproduce(stepsArea.getText());
@@ -262,9 +232,10 @@ public class SetCosmeticBug extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SetCosmeticBug().setVisible(true);
+                new SetCodeBug().setVisible(true);
             }
         });
     }
+
 }
 

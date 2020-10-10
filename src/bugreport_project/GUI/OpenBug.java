@@ -1,4 +1,4 @@
-package org.leonardi.bugreport.GUI;
+package bugreport_project.GUI;
 
 import javax.swing.*;
 import java.io.*;

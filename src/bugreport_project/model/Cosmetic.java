@@ -1,9 +1,6 @@
-package org.leonardi.bugreport.model;
+package bugreport_project.model;
 
-import org.leonardi.bugreport.AbstractBug;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import bugreport_project.AbstractBug;
 
 public class Cosmetic extends AbstractBug {
 

@@ -1,4 +1,4 @@
-package org.leonardi.bugreport.GUI;
+package bugreport_project.GUI;
 
 public class SelectBug extends javax.swing.JFrame {
 

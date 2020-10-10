@@ -1,13 +1,9 @@
-package org.leonardi.bugreport;
+package bugreport_project;
 
-import org.leonardi.bugreport.model.Audio;
-import org.leonardi.bugreport.model.Code;
-import org.leonardi.bugreport.model.Cosmetic;
+import bugreport_project.model.Audio;
+import bugreport_project.model.Code;
+import bugreport_project.model.Cosmetic;
 
-import java.awt.desktop.ScreenSleepEvent;
-import java.io.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class TemplateFactory {

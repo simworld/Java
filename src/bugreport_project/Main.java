@@ -1,6 +1,6 @@
-package org.leonardi.bugreport;
+package bugreport_project;
 
-import org.leonardi.bugreport.GUI.FirstWindow;
+import bugreport_project.GUI.FirstWindow;
 
 import javax.swing.*;
 
@@ -11,7 +11,7 @@ public class Main extends JFrame{
     public static void main(String[] args) {
 
 
-        FirstWindow  first = new FirstWindow();
+        FirstWindow first = new FirstWindow();
         first.setVisible(true);
 
 

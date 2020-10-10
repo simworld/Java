@@ -1,7 +1,7 @@
-package org.leonardi.bugreport.GUI;
+package bugreport_project.GUI;
 
-import org.leonardi.bugreport.Database;
-import org.leonardi.bugreport.model.Audio;
+import bugreport_project.model.Audio;
+import bugreport_project.Database;
 
 import javax.swing.*;
 

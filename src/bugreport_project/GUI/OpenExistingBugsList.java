@@ -1,6 +1,6 @@
 //package org.leonardi.bugreport.GUI;
 //
-//import org.leonardi.bugreport.Database;
+//import Database;
 //
 //import javax.swing.*;
 //import java.awt.event.MouseAdapter;
