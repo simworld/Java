@@ -5,7 +5,7 @@ import bugreport_project.GUI.FirstWindow;
 import javax.swing.*;
 
 
-public class Main extends JFrame{
+public class Start extends JFrame{
 
 
     public static void main(String[] args) {

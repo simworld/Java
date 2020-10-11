@@ -1,4 +1,4 @@
-package org.leonardi.bugreport;
+package bugreport;
 
 import org.apache.commons.lang3.StringUtils;
 
